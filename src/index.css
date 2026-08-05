@@ -1,3 +1,4 @@
+@import "./styles/theme.css";
 *{
   margin:0;
   padding:0;
@@ -14,3 +15,8 @@ body,
 body{
   font-family:Arial, Helvetica, sans-serif;
 }
+background: var(--sky);
+
+color: var(--primary);
+
+border-radius: var(--radius);

@@ -1,9 +1,9 @@
 import "./House.css";
 
-import Sky from "./Sky";
-import Sun from "./Sun";
-import Grass from "./Grass";
-import Path from "./Path";
+import Sky from "../environment/Sky";
+import Sun from "../environment/Sun";
+import Grass from "../environment/Grass";
+import Path from "../environment/Path";
 
 function House() {
   return (

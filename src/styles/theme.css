@@ -1,0 +1,20 @@
+:root{
+
+    --sky:#9DD6FF;
+    --grass:#7AC74F;
+    --house:#FAFAFA;
+    --roof:#4B5563;
+    --door:#8B5E3C;
+
+    --glass:#C9F0FF;
+
+    --primary:#1F2937;
+    --secondary:#6B7280;
+
+    --accent:#F59E0B;
+
+    --shadow:rgba(0,0,0,.18);
+
+    --radius:18px;
+
+}
