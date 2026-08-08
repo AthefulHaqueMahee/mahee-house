@@ -100,30 +100,66 @@ function Interior() {
 
         <aside className="room-menu">
 
-          <p className="menu-title">EXPLORE THE HOUSE</p>
+  <div className="menu-header">
+    <span>🏡</span>
+    <div>
+      <strong>MAHEE'S HOUSE</strong>
+      <small>Explore the rooms</small>
+    </div>
+  </div>
 
-          {rooms.map((item) => {
-            const Icon = item.icon;
+  <div className="room-list">
 
-            return (
-              <button
-                key={item.id}
-                className={`room-button ${
-                  room === item.id ? "active" : ""
-                }`}
-                onClick={() => setRoom(item.id)}
-              >
-                <Icon size={20} />
-                <span>{item.title}</span>
-              </button>
-            );
-          })}
+    {rooms.map((item) => {
+      const Icon = item.icon;
 
-        </aside>
+      return (
+        <button
+          key={item.id}
+          className={`room-button ${
+            room === item.id ? "active" : ""
+          }`}
+          onClick={() => setRoom(item.id)}
+        >
+          <span className="room-icon">
+            <Icon size={19} />
+          </span>
 
-        <main className="room-area">
-          {currentRoom.component}
-        </main>
+          <span className="room-name">
+            {item.title}
+          </span>
+
+          <span className="room-arrow">
+            →
+          </span>
+        </button>
+      );
+    })}
+
+  </div>
+
+  <div className="menu-footer">
+    <span>✦</span>
+    <p>Every room tells a story.</p>
+  </div>
+
+</aside>
+
+       <main className="room-area">
+
+  <div className="room-decoration">
+    <span />
+    <span />
+    <span />
+  </div>
+
+  <div className="room-number">
+    ROOM {String(rooms.findIndex((item) => item.id === room) + 1).padStart(2, "0")}
+  </div>
+
+  {currentRoom.component}
+
+</main>
 
       </div>
 

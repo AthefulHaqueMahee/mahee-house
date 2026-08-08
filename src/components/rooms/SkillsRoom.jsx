@@ -1,13 +1,38 @@
 function SkillsRoom() {
+
   const skills = [
-    "JavaScript",
-    "React",
-    "HTML & CSS",
-    "Java",
-    "C",
-    "SQL",
-    "Git & GitHub",
-    "Node.js",
+    {
+      name: "JavaScript",
+      level: "Intermediate",
+    },
+    {
+      name: "React",
+      level: "Learning",
+    },
+    {
+      name: "HTML & CSS",
+      level: "Strong",
+    },
+    {
+      name: "Java",
+      level: "Intermediate",
+    },
+    {
+      name: "C",
+      level: "Intermediate",
+    },
+    {
+      name: "SQL",
+      level: "Intermediate",
+    },
+    {
+      name: "Git & GitHub",
+      level: "Intermediate",
+    },
+    {
+      name: "Node.js",
+      level: "Learning",
+    },
   ];
 
   return (
@@ -18,15 +43,49 @@ function SkillsRoom() {
       <h1>Skills 💻</h1>
 
       <p>
-        Technologies and tools I'm learning and working with.
+        The tools and technologies that I use,
+        practice and continue to explore.
       </p>
 
-      <div className="skills-grid">
+      <div className="skill-list">
+
         {skills.map((skill) => (
-          <div className="skill-card" key={skill}>
-            {skill}
+          <div
+            className="skill-item"
+            key={skill.name}
+          >
+
+            <div className="skill-top">
+
+              <strong>
+                {skill.name}
+              </strong>
+
+              <span>
+                {skill.level}
+              </span>
+
+            </div>
+
+            <div className="skill-bar">
+
+              <div
+                className="skill-progress"
+                style={{
+                  width:
+                    skill.level === "Strong"
+                      ? "90%"
+                      : skill.level === "Intermediate"
+                      ? "70%"
+                      : "45%",
+                }}
+              />
+
+            </div>
+
           </div>
         ))}
+
       </div>
 
     </section>
