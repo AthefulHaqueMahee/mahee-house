@@ -1,33 +1,87 @@
+import { Mail, Download } from "lucide-react";
+
 function LivingRoom() {
   return (
     <section className="profile-room">
 
-      <p className="room-kicker">WELCOME TO MY WORLD</p>
+      <p className="room-kicker">THE LIVING ROOM</p>
 
-      <h1>Hi, I'm Mahee 👋</h1>
+      <div className="profile-intro">
 
-      <h2>Software Engineering Student & Developer</h2>
+        <div className="profile-text">
 
-      <p>
-        I'm passionate about software development, web technologies,
-        problem solving, and building useful digital experiences.
-      </p>
+          <span className="hello-text">
+            HELLO, I'M
+          </span>
 
-      <div className="quick-info">
-        <div>
-          <strong>Software Engineering</strong>
-          <span>Student</span>
+          <h1>
+            Mahee.
+          </h1>
+
+          <h2>
+            Software Engineering Student
+            <br />
+            & Developer
+          </h2>
+
+          <p>
+            I'm a Software Engineering student passionate about
+            building useful software, exploring modern web
+            technologies, and turning ideas into real-world
+            digital experiences.
+          </p>
+
+          <div className="profile-buttons">
+
+            <a
+              href="/mahee-cv.pdf"
+              className="cv-button"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Download size={17} />
+              View My CV
+            </a>
+
+            <a
+              href="mailto:your-email@example.com"
+              className="contact-button"
+            >
+              <Mail size={17} />
+              Contact Me
+            </a>
+
+          </div>
+
+         
+
         </div>
 
-        <div>
-          <strong>Bangladesh</strong>
-          <span>Based in</span>
+        <div className="profile-card">
+
+          <div className="profile-card-top">
+            <span>🏡</span>
+            <span>ROOM 01</span>
+          </div>
+
+          <div className="profile-avatar">
+            M
+          </div>
+
+          <h3>
+            MD Atheful Haque Mahee
+          </h3>
+
+          <p>
+            Software Engineering
+          </p>
+
+          <div className="profile-location">
+            📍 Bangladesh
+          </div>
+
         </div>
 
-        <div>
-          <strong>Developer</strong>
-          <span>Career Goal</span>
-        </div>
       </div>
 
     </section>

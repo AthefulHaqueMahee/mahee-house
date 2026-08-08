@@ -1,39 +1,105 @@
+import { ExternalLink } from "lucide-react";
 function ProjectsRoom() {
+
   const projects = [
     {
+      number: "01",
       title: "Food Axis",
+      category: "Restaurant Management Platform",
       description:
-        "A restaurant operations and management platform.",
+        "A restaurant operations platform designed to organize and simplify restaurant management processes.",
+      technologies: ["React", "JavaScript", "CSS"],
     },
+
     {
+      number: "02",
       title: "Hotel Management System",
+      category: "Desktop / Java Project",
       description:
-        "A Java-based hotel management project.",
+        "A Java-based management system designed to handle hotel operations and management tasks.",
+      technologies: ["Java", "OOP", "File Handling"],
     },
+
     {
-      title: "Portfolio House",
+      number: "03",
+      title: "House Portfolio",
+      category: "Interactive Portfolio",
       description:
-        "This interactive portfolio website.",
+        "An interactive portfolio designed as a virtual house where every room represents a different part of my professional journey.",
+      technologies: ["React", "Vite", "Framer Motion"],
     },
   ];
 
   return (
     <section>
 
-      <p className="room-kicker">THE LIBRARY</p>
+      <p className="room-kicker">
+        THE PROJECT ROOM
+      </p>
 
-      <h1>Projects 📚</h1>
+      <h1>
+        Things I've Built 📚
+      </h1>
 
-      <div className="project-grid">
+      <p>
+        A collection of projects I've worked on while
+        learning, experimenting and solving problems.
+      </p>
+
+      <div className="projects-showcase">
 
         {projects.map((project) => (
-          <article className="project-card" key={project.title}>
 
-            <h2>{project.title}</h2>
+          <article
+            className="project-showcase-card"
+            key={project.number}
+          >
 
-            <p>{project.description}</p>
+            <div className="project-number">
+              {project.number}
+            </div>
+
+            <div className="project-content">
+
+              <span className="project-category">
+                {project.category}
+              </span>
+
+              <h2>
+                {project.title}
+              </h2>
+
+              <p>
+                {project.description}
+              </p>
+
+              <div className="technology-list">
+
+                {project.technologies.map(
+                  (technology) => (
+                    <span key={technology}>
+                      {technology}
+                    </span>
+                  )
+                )}
+
+              </div>
+
+              <div className="project-links">
+
+              
+
+                <a href="#">
+                  <ExternalLink size={16} />
+                  Preview
+                </a>
+
+              </div>
+
+            </div>
 
           </article>
+
         ))}
 
       </div>

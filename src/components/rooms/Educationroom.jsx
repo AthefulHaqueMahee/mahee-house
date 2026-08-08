@@ -2,22 +2,46 @@ function EducationRoom() {
   return (
     <section>
 
-      <p className="room-kicker">THE STUDY</p>
+      <p className="room-kicker">
+        THE STUDY
+      </p>
 
-      <h1>Education 🎓</h1>
+      <h1>
+        Education 🎓
+      </h1>
 
-      <div className="timeline-card">
+      <p>
+        The academic journey that has shaped my
+        foundation in software engineering.
+      </p>
 
-        <h2>B.Sc. in Software Engineering</h2>
+      <div className="education-card">
 
-        <p>
-          Daffodil International University
-        </p>
+        <div className="education-year">
+          B.Sc.
+        </div>
 
-        <p>
-          Currently pursuing my undergraduate degree
-          in Software Engineering.
-        </p>
+        <div className="education-content">
+
+          <span>
+            CURRENTLY PURSUING
+          </span>
+
+          <h2>
+            Bachelor of Science in Software Engineering
+          </h2>
+
+          <h3>
+            Daffodil International University
+          </h3>
+
+          <p>
+            Building a strong foundation in programming,
+            software engineering, algorithms, databases,
+            web development and computer science.
+          </p>
+
+        </div>
 
       </div>
 
