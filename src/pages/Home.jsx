@@ -1,7 +1,7 @@
-import House from "../components/House/House";
+import House from "../components/house/House";
 
-function Home() {
-  return <House />;
+function Home({ onEnter }) {
+  return <House onEnter={onEnter} />;
 }
 
 export default Home;

@@ -1,138 +1,518 @@
-.scene{
-    width:100%;
-    height:100vh;
-    background:#87ceeb;
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-    position:relative;
-    overflow:hidden;
+* {
+    box-sizing: border-box;
 }
 
-.grass {
-    position: absolute;
-    bottom: 0;
+.house-scene {
+    position: relative;
     width: 100%;
-    height: 180px;
-    background: #3ca34b;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-family: Arial, sans-serif;
+}
+
+/* SKY */
+
+.sky {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #83cfff 0%,
+            #bce7ff 55%,
+            #e8f7ff 100%
+        );
+
+    z-index: 0;
+}
+
+/* SUN */
+
+.sun {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    top: 70px;
+    right: 12%;
+
+    border-radius: 50%;
+
+    background: #ffe27a;
+
+    box-shadow:
+        0 0 35px #ffe27a,
+        0 0 80px rgba(255, 226, 122, .5);
+
     z-index: 1;
 }
 
-.house{
-    position:relative;
-    margin-bottom:180px;
-     z-index: 10;
+/* CLOUDS */
+
+.cloud {
+    position: absolute;
+
+    font-size: 70px;
+
+    opacity: .75;
+
+    z-index: 2;
 }
 
-.roof{
-    width:300px;
-    height:80px;
-
-    background:#4B5563;
-
-    clip-path:polygon(50% 0%,100% 100%,0% 100%);
-}
-.body{
-    width:300px;
-    height:240px;
-    background:white;
-    border:4px solid #ccc;
-
-    display:flex;
-    justify-content:space-evenly;
-    align-items:center;
-
-    position:relative;
+.cloud-one {
+    top: 90px;
+    left: 12%;
 }
 
-.window{
-    width:60px;
-    height:70px;
-    background:#bde7ff;
-    border:3px solid #444;
+.cloud-two {
+    top: 180px;
+    right: 20%;
+    font-size: 55px;
 }
 
-.door{
-    width:80px;
-    height:140px;
+/* GRASS */
 
-    background:#8B5A2B;
+.grass {
+    position: absolute;
 
-    align-self:flex-end;
+    bottom: 0;
+    left: 0;
 
-    position:relative;
+    width: 100%;
+    height: 28%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #72bd57,
+            #4d9c43
+        );
+
+    z-index: 3;
 }
 
-.nameplate{
-    position:absolute;
-    top:-95px;
-    left:50%;
-    transform:translateX(-50%);
-
-    width:220px;
-    background:white;
-    padding:10px;
-    border-radius:12px;
-    text-align:center;
-
-    z-index:20;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
-
-.nameplate h3{
-    font-size:16px;
-}
-
-.nameplate p{
-    font-size:12px;
-}
-.sky{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to bottom,
-        #7ecbff,
-        #cdefff
-    );
-}
-
-.sun{
-    position:absolute;
-    top:70px;
-    right:120px;
-
-    width:90px;
-    height:90px;
-
-    background:#ffd93d;
-
-    border-radius:50%;
-
-    box-shadow:
-        0 0 60px #ffd93d,
-        0 0 120px #ffd93d;
-}
+/* PATH */
 
 .path {
     position: absolute;
 
     bottom: 0;
-
     left: 50%;
+
     transform: translateX(-50%);
 
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 300px;
 
-    background: #c8c8c8;
+    background:
+        linear-gradient(
+            90deg,
+            #b8b0a4,
+            #ddd7ce,
+            #b8b0a4
+        );
 
     clip-path: polygon(
-        45% 0,
-        55% 0,
+        38% 0,
+        62% 0,
         100% 100%,
         0 100%
     );
 
-    z-index: 2;
+    z-index: 4;
+}
+
+/* HOUSE */
+
+.main-house {
+    position: relative;
+
+    width: 650px;
+
+    margin-bottom: 115px;
+
+    z-index: 8;
+
+    filter:
+        drop-shadow(
+            0 20px 25px rgba(0,0,0,.18)
+        );
+}
+
+/* ROOF */
+
+.roof {
+    position: relative;
+
+    width: 700px;
+    height: 180px;
+
+    margin-left: -25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #59636f,
+            #303943
+        );
+
+    clip-path: polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.chimney {
+    position: absolute;
+
+    right: 120px;
+    top: 45px;
+
+    width: 65px;
+    height: 100px;
+
+    background: #6d7378;
+
+    border-radius: 4px;
+}
+
+/* HOUSE BODY */
+
+.house-body {
+    position: relative;
+
+    width: 650px;
+    height: 360px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f2f2f2
+        );
+
+    border-radius: 4px;
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* WINDOWS */
+
+.window {
+    position: relative;
+
+    width: 135px;
+    height: 145px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff6ff,
+            #9ed7ec
+        );
+
+    border: 9px solid #ffffff;
+
+    border-radius: 8px;
+
+    box-shadow:
+        inset 0 0 20px rgba(255,255,255,.7),
+        0 8px 15px rgba(0,0,0,.12);
+}
+
+.window-cross {
+    position: absolute;
+
+    background: rgba(255,255,255,.8);
+}
+
+.window-cross.horizontal {
+    width: 100%;
+    height: 5px;
+
+    top: 50%;
+}
+
+.window-cross.vertical {
+    width: 5px;
+    height: 100%;
+
+    left: 50%;
+}
+
+/* DOOR */
+
+.entrance-door {
+    position: relative;
+
+    width: 145px;
+    height: 245px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #704629,
+            #9a6741,
+            #704629
+        );
+
+    border: 8px solid #55351f;
+
+    border-radius: 7px 7px 0 0;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 0 20px rgba(0,0,0,.25),
+        0 10px 20px rgba(0,0,0,.2);
+
+    transition:
+        box-shadow .3s ease;
+}
+
+.entrance-door:hover {
+    box-shadow:
+        0 0 30px rgba(255, 210, 120, .65),
+        inset 0 0 20px rgba(0,0,0,.25);
+}
+
+/* HANDLE */
+
+.door-handle {
+    position: absolute;
+
+    right: 18px;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #e5bd67;
+
+    box-shadow:
+        0 0 8px rgba(229,189,103,.8);
+}
+
+/* NAMEPLATE */
+
+.nameplate {
+    position: absolute;
+
+    left: 50%;
+    top: -65px;
+
+    transform: translateX(-50%);
+
+    width: 260px;
+
+    padding: 10px 14px;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b98250,
+            #8f5e36
+        );
+
+    color: white;
+
+    box-shadow:
+        0 7px 15px rgba(0,0,0,.25);
+
+    border: 2px solid #d6a06d;
+}
+
+.nameplate strong {
+    display: block;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.nameplate span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    opacity: .85;
+}
+
+/* STEPS */
+
+.steps {
+    position: absolute;
+
+    bottom: -35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 200px;
+}
+
+.steps div {
+    height: 12px;
+
+    margin-bottom: 5px;
+
+    background: #aaa39a;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 3px 5px rgba(0,0,0,.15);
+}
+
+.steps div:nth-child(2) {
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.steps div:nth-child(3) {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TREES */
+
+.tree {
+    position: absolute;
+
+    bottom: 24%;
+
+    z-index: 6;
+
+    text-align: center;
+}
+
+.tree-left {
+    left: 5%;
+}
+
+.tree-right {
+    right: 5%;
+}
+
+.tree-top {
+    font-size: 130px;
+}
+
+.tree-trunk {
+    width: 35px;
+    height: 90px;
+
+    background: #765036;
+
+    margin: -20px auto 0;
+
+    border-radius: 8px;
+}
+
+/* WELCOME */
+
+.welcome-message {
+    position: absolute;
+
+    top: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    z-index: 20;
+
+    color: #23313d;
+}
+
+.welcome-message span {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    color: #876039;
+}
+
+.welcome-message h1 {
+    margin: 8px 0;
+
+    font-size: clamp(25px, 4vw, 44px);
+
+    font-weight: 700;
+}
+
+.welcome-message p {
+    margin: 0;
+
+    color: #52616d;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .main-house {
+        transform: scale(.7);
+        transform-origin: bottom center;
+
+        margin-bottom: 70px;
+    }
+
+    .tree {
+        transform: scale(.7);
+    }
+
+    .welcome-message {
+        width: 90%;
+        top: 20px;
+    }
+
+    .sun {
+        right: 8%;
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .main-house {
+        transform: scale(.48);
+        margin-bottom: 30px;
+    }
+
+    .tree {
+        display: none;
+    }
+
+    .path {
+        width: 140px;
+    }
 }
