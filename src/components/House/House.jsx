@@ -1,25 +1,27 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import "./House.css";
 
 function House({ onEnter }) {
+  const [isEvening, setIsEvening] = useState(false);
   return (
     <main className="house-scene">
 
       {/* Sky */}
-      <div className="sky" />
+     <div className={`sky ${isEvening ? "evening" : ""}`} />
 
       {/* Sun */}
       <motion.div
-        className="sun"
-        animate={{
-          y: [0, -8, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+  className={`sun ${isEvening ? "evening" : ""}`}
+  animate={{
+    y: [0, -8, 0],
+  }}
+  transition={{
+    duration: 5,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+/>
 
       {/* Clouds */}
       <motion.div
@@ -58,10 +60,26 @@ function House({ onEnter }) {
       </div>
 
       {/* Grass */}
-      <div className="grass" />
+     <div className="grass">
+
+  <div className="flower flower-one">🌷</div>
+  <div className="flower flower-two">🌼</div>
+  <div className="flower flower-three">🌷</div>
+  <div className="flower flower-four">🌼</div>
+
+  <div className="garden-bush bush-left">🌿</div>
+  <div className="garden-bush bush-right">🌿</div>
+
+</div>
 
       {/* Path */}
-      <div className="path" />
+      <div className="path">
+
+  <div className="path-stone stone-one" />
+  <div className="path-stone stone-two" />
+  <div className="path-stone stone-three" />
+
+</div>
 
       {/* House */}
       <motion.div
@@ -85,6 +103,8 @@ function House({ onEnter }) {
             <div className="window-cross vertical" />
           </div>
 
+          <div className="porch-light porch-light-left" />
+          <div className="porch-light porch-light-right" />
           {/* Entrance */}
           <motion.div
             className="entrance-door"
@@ -125,7 +145,13 @@ function House({ onEnter }) {
         </div>
 
       </motion.div>
-
+              {/* Day / Evening Toggle */}
+<button
+  className="time-toggle"
+  onClick={() => setIsEvening(!isEvening)}
+>
+  {isEvening ? "☀️ Day Mode" : "🌙 Evening Mode"}
+</button>
       {/* Welcome message */}
       <motion.div
         className="welcome-message"

@@ -44,7 +44,7 @@ function LivingRoom() {
             </a>
 
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:athefulhaque@gmail.com"
               className="contact-button"
             >
               <Mail size={17} />
@@ -61,7 +61,7 @@ function LivingRoom() {
 
           <div className="profile-card-top">
             <span>🏡</span>
-            <span>ROOM 01</span>
+            <span>Mahee's Living Room</span>
           </div>
 
           <div className="profile-avatar">

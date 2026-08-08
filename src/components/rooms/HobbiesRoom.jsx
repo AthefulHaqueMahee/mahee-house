@@ -1,6 +1,6 @@
 function HobbiesRoom() {
   return (
-    <section>
+    <section className="special-room hobbies-special">
 
       <p className="room-kicker">MY PERSONAL SPACE</p>
 

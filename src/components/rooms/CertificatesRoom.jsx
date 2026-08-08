@@ -1,6 +1,6 @@
 function CertificatesRoom() {
   return (
-    <section>
+    <section className="special-room certificates-special">
 
       <p className="room-kicker">THE GARAGE</p>
 

@@ -36,7 +36,7 @@ function SkillsRoom() {
   ];
 
   return (
-    <section>
+    <section className="special-room skills-special">
 
       <p className="room-kicker">THE WORKSHOP</p>
 

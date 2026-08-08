@@ -1,6 +1,6 @@
 function EducationRoom() {
   return (
-    <section>
+    <section className="special-room education-special">
 
       <p className="room-kicker">
         THE STUDY

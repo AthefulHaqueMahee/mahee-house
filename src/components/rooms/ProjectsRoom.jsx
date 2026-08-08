@@ -31,7 +31,7 @@ function ProjectsRoom() {
   ];
 
   return (
-    <section>
+       <section className="special-room projects-special">
 
       <p className="room-kicker">
         THE PROJECT ROOM

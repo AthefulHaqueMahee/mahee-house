@@ -3,7 +3,7 @@ import {
   User,
   GraduationCap,
   Code2,
-  Briefcase,
+  Briefcase, 
   FolderGit2,
   Palette,
   Award,
@@ -22,7 +22,7 @@ import ContactRoom from "../components/rooms/ContactRoom";
 
 import "./Interior.css";
 
-function Interior() {
+function Interior({ onBack }) {
   const [room, setRoom] = useState("living");
 
   const rooms = [
@@ -79,8 +79,8 @@ function Interior() {
   const currentRoom = rooms.find((item) => item.id === room);
 
   return (
-    <div className="interior">
-
+    <div className="interior" >
+      
       <header className="interior-header">
         <div>
           <p className="house-label">MAHEE'S HOUSE</p>
@@ -157,7 +157,10 @@ function Interior() {
     ROOM {String(rooms.findIndex((item) => item.id === room) + 1).padStart(2, "0")}
   </div>
 
-  {currentRoom.component}
+  
+  <div key={room} className="room-content">
+    {currentRoom.component}
+  </div>
 
 </main>
 

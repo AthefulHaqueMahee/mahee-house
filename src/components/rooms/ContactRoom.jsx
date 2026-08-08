@@ -1,6 +1,6 @@
 function ContactRoom() {
   return (
-    <section className="contact-room">
+    <section className="special-room contact-special">
 
       <p className="room-kicker">THE FRONT DESK</p>
 

@@ -1,6 +1,6 @@
 function ExperienceRoom() {
   return (
-    <section>
+    <section className="special-room experience-special">
 
       <p className="room-kicker">THE OFFICE</p>
 
