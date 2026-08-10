@@ -153,16 +153,19 @@ function House({ onEnter }) {
   {isEvening ? "☀️ Day Mode" : "🌙 Evening Mode"}
 </button>
       {/* Welcome message */}
-      <motion.div
-        className="welcome-message"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        <span>WELCOME TO MY WORLD</span>
-        <h1>Every Room Tells A Story</h1>
-        <p>Click the door to explore.</p>
-      </motion.div>
+      {/* Welcome message */}
+<motion.div
+  className={`welcome-message ${isEvening ? "evening" : ""}`}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 1, duration: 1 }}
+>
+  <span>WELCOME TO MY WORLD</span>
+
+  <h1>Every Room Tells A Story</h1>
+
+  <p>Click the door to explore.</p>
+</motion.div>
 
     </main>
   );

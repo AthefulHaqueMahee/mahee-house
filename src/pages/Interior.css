@@ -3794,3 +3794,111 @@ a.contact-card:hover {
 
     gap: 8px !important;
 }
+
+.welcome-message {
+    position: absolute;
+
+    top: 115px;
+    right: 4%;
+
+    width: 330px;
+
+    text-align: center;
+
+    z-index: 20;
+
+    color: #23313d;
+}
+
+.welcome-message h1 {
+    margin: 8px 0;
+
+    font-size: clamp(28px, 3.2vw, 44px);
+
+    line-height: 1.15;
+
+    font-weight: 700;
+}
+
+.cloud-two {
+    top: 110px;
+    right: 23%;
+    font-size: 55px;
+}
+
+/* ========================================
+   FINAL WELCOME MESSAGE POSITION
+======================================== */
+
+.welcome-message {
+    position: absolute !important;
+
+    top: 105px !important;
+    left: auto !important;
+    right: 2% !important;
+
+    width: 300px !important;
+
+    transform: none !important;
+
+    text-align: center !important;
+
+    z-index: 30 !important;
+
+    color: #23313d !important;
+}
+
+.welcome-message span {
+    display: block !important;
+
+    font-size: 10px !important;
+    letter-spacing: 4px !important;
+    font-weight: 700 !important;
+}
+
+.welcome-message h1 {
+    margin: 8px 0 !important;
+
+    font-size: 40px !important;
+
+    line-height: 1.15 !important;
+
+    font-weight: 700 !important;
+}
+
+.welcome-message p {
+    margin: 10px 0 0 !important;
+
+    font-size: 16px !important;
+
+    color: #52616d !important;
+}
+
+.cloud-two {
+    top: 95px !important;
+    right: 28% !important;
+
+    font-size: 55px !important;
+
+    z-index: 2 !important;
+}
+
+.sun {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    top: 70px;
+    left: 12%;
+
+    border-radius: 50%;
+
+    background: #ffe27a;
+
+    box-shadow:
+        0 0 35px #ffe27a,
+        0 0 80px rgba(255, 226, 122, .5);
+
+    z-index: 1;
+}

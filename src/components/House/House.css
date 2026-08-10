@@ -854,3 +854,49 @@
 .time-toggle:active {
     transform: scale(.96);
 }
+
+/* Night Mode Text */
+.night-mode .welcome-message {
+    color: #ffffff !important;
+}
+
+.night-mode .welcome-message span {
+    color: #f5d9a6 !important;
+}
+
+.night-mode .welcome-message p {
+    color: #e6e6e6 !important;
+}
+.house-scene.night-mode .welcome-message {
+    color: #ffffff !important;
+}
+
+.house-scene.night-mode .welcome-message span {
+    color: #f5d9a6 !important;
+}
+
+.house-scene.night-mode .welcome-message p {
+    color: #e6e6e6 !important;
+}
+
+
+/* Welcome text transition */
+.welcome-message {
+    transition: color 0.8s ease;
+}
+
+.welcome-message.evening {
+    color: #ffffff !important;
+}
+
+.welcome-message.evening span {
+    color: #f5d9a6 !important;
+}
+
+.welcome-message.evening h1 {
+    color: #ffffff !important;
+}
+
+.welcome-message.evening p {
+    color: #eeeeee !important;
+}
