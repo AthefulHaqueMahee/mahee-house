@@ -2331,60 +2331,60 @@ a.contact-card:hover {
 
 .education-top {
     display: flex;
-
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    margin-bottom: 14px;
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    gap: 40px;
 }
 
+
 .education-type {
-    font-size: 9px;
+    display: block;
 
-    font-weight: 700;
-
+    font-size: 10px;
     letter-spacing: 2px;
+    line-height: 1.3;
 
-    color: #927053;
+    max-width: 150px;
 }
 
 .education-period {
-    font-size: 9px;
+    display: block;
 
-    font-weight: 700;
+    white-space: nowrap;
 
+    font-size: 10px;
     letter-spacing: 1px;
 
-    color: #999;
+    margin-left: auto;
 }
-
 
 /* TITLE */
 
 .education-card h2 {
-    margin: 0;
+    position: static;
 
-    font-size: 21px;
+    margin: 10px 0 8px;
 
-    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.3;
 
-    color: #26333d;
-
-    transition:
-        transform .35s ease;
+    color: #293640;
 }
-
 
 /* INSTITUTION */
 
 .education-card h3 {
-    margin: 7px 0 0;
+    margin: 0 0 18px;
 
-    font-size: 12px;
-
+    font-size: 13px;
     font-weight: 500;
 
-    color: #858585;
+    color: #7b858c;
 }
 
 
@@ -2540,4 +2540,1257 @@ a.contact-card:hover {
     .education-card h2 {
         font-size: 18px;
     }
+}
+
+/* ========================================
+   CERTIFICATE VAULT
+======================================== */
+
+.certificate-vault {
+    position: relative;
+
+    width: 100%;
+    max-width: 1100px;
+    min-height: 600px;
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,255,255,.08),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #17191c,
+            #0c0e10
+        );
+
+    color: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.25);
+}
+
+
+/* subtle vault atmosphere */
+
+.certificate-vault::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+
+/* HEADER */
+
+.vault-header {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 45px;
+}
+
+.vault-header h1 {
+    margin: 5px 0 8px;
+
+    font-size: clamp(34px, 5vw, 58px);
+
+    letter-spacing: -2px;
+}
+
+.vault-subtitle {
+    margin: 0;
+
+    color: #9da3a8;
+
+    font-size: 13px;
+}
+
+
+/* COUNTER */
+
+.vault-counter {
+    text-align: right;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.vault-counter span {
+    font-size: 46px;
+
+    line-height: 1;
+
+    font-weight: 300;
+}
+
+.vault-counter small {
+    margin-top: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #777d82;
+}
+
+
+/* GRID */
+
+.certificate-vault-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* CERTIFICATE */
+
+.certificate-piece {
+    position: relative;
+
+    min-height: 235px;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .5s ease;
+}
+
+
+/* glass shine */
+
+.certificate-shine {
+    position: absolute;
+
+    top: -100%;
+
+    left: -40%;
+
+    width: 45%;
+    height: 300%;
+
+    transform: rotate(25deg);
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(255,255,255,.14),
+            transparent
+        );
+
+    transition:
+        left .7s ease;
+
+    pointer-events: none;
+}
+
+
+/* NUMBER */
+
+.certificate-number {
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #646a6f;
+}
+
+
+/* CONTENT */
+
+.certificate-content {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.certificate-year {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #8d9499;
+}
+
+
+/* SEAL */
+
+.certificate-seal {
+    width: 55px;
+    height: 55px;
+
+    margin: 17px 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    color: #d5d7d8;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.08);
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+
+/* TITLE */
+
+.certificate-piece h2 {
+    margin: 0;
+
+    max-width: 280px;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+}
+
+.certificate-piece p {
+    margin: 8px 0 0;
+
+    font-size: 11px;
+
+    color: #8e959a;
+}
+
+
+/* OPEN */
+
+.certificate-open {
+    margin-top: auto;
+    padding-top: 20px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #aaaeb1;
+
+    opacity: .5;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.certificate-piece:hover {
+    transform:
+        translateY(-10px)
+        scale(1.015);
+
+    border-color:
+        rgba(255,255,255,.28);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.35),
+        0 0 35px rgba(255,255,255,.04);
+}
+
+.certificate-piece:hover
+.certificate-shine {
+    left: 120%;
+}
+
+.certificate-piece:hover
+.certificate-seal {
+    transform:
+        rotate(180deg)
+        scale(1.12);
+
+    box-shadow:
+        0 0 35px rgba(255,255,255,.16);
+}
+
+.certificate-piece:hover
+.certificate-open {
+    opacity: 1;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.vault-footer {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 42px;
+}
+
+.vault-footer p {
+    margin: 0;
+
+    white-space: nowrap;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #656b70;
+}
+
+.vault-line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #33383c,
+            transparent
+        );
+}
+
+
+/* ========================================
+   MODAL
+======================================== */
+
+.certificate-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(5,6,7,.82);
+
+    backdrop-filter:
+        blur(14px);
+
+    animation:
+        vaultFade .35s ease;
+}
+
+@keyframes vaultFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* MODAL BOX */
+
+.certificate-modal-content {
+    position: relative;
+
+    width: min(650px, 100%);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d2023,
+            #101214
+        );
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.6);
+
+    animation:
+        vaultOpen .45s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes vaultOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.85)
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* CLOSE */
+
+.certificate-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #aaa;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+}
+
+.certificate-close:hover {
+    background: white;
+
+    color: black;
+}
+
+
+/* MODAL CERTIFICATE */
+
+.modal-certificate {
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.07),
+            transparent 65%
+        );
+}
+
+.modal-certificate > span {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #858b90;
+}
+
+.modal-seal {
+    width: 75px;
+    height: 75px;
+
+    margin: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    font-size: 27px;
+
+    box-shadow:
+        0 0 40px rgba(255,255,255,.08);
+}
+
+.modal-certificate > p {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #8e9498;
+}
+
+.modal-certificate h2 {
+    max-width: 500px;
+
+    margin: 10px 0;
+
+    font-size: 30px;
+
+    font-weight: 400;
+}
+
+.modal-divider {
+    width: 80px;
+
+    height: 1px;
+
+    margin: 15px 0;
+
+    background: #666;
+}
+
+.modal-certificate h3 {
+    margin: 0;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    color: #a4aaae;
+}
+
+.modal-description {
+    max-width: 450px;
+
+    line-height: 1.7;
+
+    color: #777e83;
+}
+
+
+/* VIEW BUTTON */
+
+.certificate-view-button {
+    display: block;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 8px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.certificate-view-button:hover {
+    background: white;
+
+    color: #111;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .certificate-vault {
+        padding: 22px;
+    }
+
+    .vault-header {
+        align-items: flex-start;
+    }
+
+    .vault-counter {
+        display: none;
+    }
+
+    .certificate-vault-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-piece {
+        min-height: 210px;
+    }
+
+    .vault-footer p {
+        white-space: normal;
+
+        text-align: center;
+    }
+
+    .vault-line {
+        display: none;
+    }
+
+    .modal-certificate {
+        min-height: 300px;
+
+        padding: 25px;
+    }
+
+    .modal-certificate h2 {
+        font-size: 23px;
+    }
+}
+
+
+/* ========================================
+   CONTACT ROOM
+======================================== */
+
+.contact-room {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 40px;
+}
+
+.contact-intro {
+    max-width: 620px;
+
+    margin-top: 10px;
+
+    color: #66717b;
+
+    line-height: 1.7;
+}
+
+
+/* STATUS */
+
+.contact-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    border: 1px solid #d8d1c8;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #6fa56b;
+
+    box-shadow:
+        0 0 8px rgba(111,165,107,.7);
+
+    animation:
+        statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .4;
+    }
+}
+
+
+/* GRID */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* CARD */
+
+.contact-card {
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-decoration: none;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(80,80,80,.12);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.97),
+            rgba(247,247,247,.92)
+        );
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+/* ACCENT */
+
+.contact-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: #8f6745;
+
+    transition:
+        width .4s ease;
+}
+
+
+/* TOP */
+
+.contact-card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+}
+
+.contact-number {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
+}
+
+.contact-label {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #927053;
+}
+
+
+/* TITLE */
+
+.contact-card h2 {
+    margin: 0;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    color: #26333d;
+
+    transition:
+        transform .35s ease;
+}
+
+
+/* VALUE */
+
+.contact-value {
+    margin: 9px 0 0;
+
+    font-size: 11px;
+
+    color: #8b8b8b;
+
+    word-break: break-word;
+}
+
+
+/* DESCRIPTION */
+
+.contact-description {
+    margin-top: 17px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #68737c;
+}
+
+
+/* ARROW */
+
+.contact-arrow {
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #8f6745;
+
+    transition:
+        transform .3s ease;
+}
+
+
+/* HOVER */
+
+.contact-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(143,103,69,.35);
+
+    box-shadow:
+        0 18px 38px rgba(0,0,0,.1);
+}
+
+.contact-card:hover::before {
+    width: 100%;
+}
+
+.contact-card:hover h2 {
+    transform:
+        translateX(6px);
+}
+
+.contact-card:hover .contact-arrow {
+    transform:
+        translateX(7px);
+}
+
+
+/* BOTTOM MESSAGE */
+
+.contact-message {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 45px;
+}
+
+.message-line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #d5d0ca,
+            transparent
+        );
+}
+
+.message-label {
+    display: block;
+
+    text-align: center;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #a08a74;
+}
+
+.contact-message h2 {
+    margin: 8px 0 0;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #59636b;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .contact-header {
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .contact-status {
+        flex-shrink: 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .contact-header {
+        flex-direction: column;
+    }
+
+    .contact-message {
+        gap: 10px;
+    }
+
+    .message-line {
+        display: none;
+    }
+}
+
+
+.profile-avatar {
+    width: 130px;
+    height: 130px;
+
+    margin: 20px auto;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 4px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.profile-card:hover .profile-avatar {
+    transform:
+        scale(1.08)
+        rotate(2deg);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+}
+
+.profile-avatar img {
+    transition: transform .6s ease;
+}
+
+.profile-card:hover .profile-avatar img {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   EDUCATION LAYOUT FIX
+======================================== */
+
+.education-card {
+    position: relative !important;
+
+    display: block !important;
+
+    padding: 26px !important;
+}
+
+
+/* TYPE + PERIOD */
+
+.education-top {
+    position: relative !important;
+
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+
+    gap: 50px !important;
+
+    margin: 0 0 22px 0 !important;
+}
+
+
+/* LEFT LABEL */
+
+.education-type {
+    position: static !important;
+
+    display: block !important;
+
+    max-width: 160px !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.35 !important;
+
+    letter-spacing: 2px !important;
+
+    white-space: normal !important;
+}
+
+
+/* RIGHT YEAR */
+
+.education-period {
+    position: static !important;
+
+    display: block !important;
+
+    margin-left: auto !important;
+
+    padding-left: 30px !important;
+
+    white-space: nowrap !important;
+
+    font-size: 10px !important;
+
+    letter-spacing: 1px !important;
+}
+
+
+/* TITLE */
+
+.education-card h2 {
+    position: static !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 0 8px 0 !important;
+
+    padding: 0 !important;
+
+    font-size: 22px !important;
+
+    line-height: 1.3 !important;
+
+    color: #293640 !important;
+}
+
+
+/* INSTITUTION */
+
+.education-card h3 {
+    position: static !important;
+
+    display: block !important;
+
+    margin: 0 0 18px 0 !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.4 !important;
+
+    color: #7b858c !important;
+}
+
+
+/* DETAILS */
+
+.education-details {
+    position: static !important;
+
+    display: block !important;
+
+    width: 100% !important;
+}
+
+
+/* DESCRIPTION */
+
+.education-details p {
+    position: static !important;
+
+    margin: 0 0 15px 0 !important;
+
+    line-height: 1.6 !important;
+}
+
+
+/* TAGS */
+
+.education-tags {
+    display: flex !important;
+
+    flex-wrap: wrap !important;
+
+    gap: 8px !important;
 }

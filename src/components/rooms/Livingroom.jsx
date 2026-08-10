@@ -66,7 +66,10 @@ function LivingRoom() {
           </div>
 
           <div className="profile-avatar">
-            M
+             <img
+    src="/mahee.png"
+    alt="MD Atheful Haque Mahee"
+  />
           </div>
 
           <h3>
