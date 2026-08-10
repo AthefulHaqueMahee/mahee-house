@@ -14,34 +14,35 @@ function LivingRoom() {
             HELLO, I'M
           </span>
 
-          <h1>
-            Mahee.
-          </h1>
-
           <h2>
+            ATHEFUL MAHEE
+          </h2>
+
+          <h3>
             Software Engineering Student
             <br />
             & Developer
-          </h2>
-
+          </h3>
+ <br />
           <p>
             I'm a Software Engineering student passionate about
             building useful software, exploring modern web
             technologies, and turning ideas into real-world
             digital experiences.
           </p>
-
+          <br />
+          <br />  
           <div className="profile-buttons">
-
+        
             <a
-              href="/mahee-cv.pdf"
-              className="cv-button"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Download size={17} />
-              View My CV
-            </a>
+  href="/mahee_cv.pdf"
+  className="cv-button"
+  target="_blank"
+  rel="noreferrer"
+>
+  <Download size={17} />
+  View My CV
+</a>
 
             <a
               href="mailto:athefulhaque@gmail.com"
@@ -77,7 +78,7 @@ function LivingRoom() {
           </p>
 
           <div className="profile-location">
-            📍 Bangladesh
+            📍Dhaka, Bangladesh
           </div>
 
         </div>
