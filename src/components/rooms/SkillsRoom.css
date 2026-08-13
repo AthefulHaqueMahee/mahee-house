@@ -1,0 +1,1057 @@
+.workshop-room {
+    position: relative;
+    width: 100%;
+    min-height: 850px;
+}
+
+.workshop-header {
+    margin-bottom: 25px;
+}
+
+.workshop-header h1 {
+    margin: 6px 0 8px;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.05;
+}
+
+.workshop-header p:last-child {
+    max-width: 650px;
+    color: #777;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   WORKSHOP SCENE
+========================================= */
+
+.workshop-scene {
+    position: relative;
+    min-height: 590px;
+    overflow: hidden;
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            #26343b,
+            #11181c 55%,
+            #090d10 100%
+        );
+
+    border: 1px solid rgba(100,180,190,.18);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.25);
+}
+
+
+/* GRID */
+
+.workshop-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(80,180,190,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(80,180,190,.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    opacity: .7;
+}
+
+
+/* =========================================
+   SIGN
+========================================= */
+
+.workshop-sign {
+    position: absolute;
+
+    top: 28px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #8bc8c9;
+
+    text-align: center;
+
+    z-index: 10;
+}
+
+.workshop-sign span {
+    font-size: 8px;
+    letter-spacing: 4px;
+}
+
+.workshop-sign strong {
+    margin-top: 2px;
+
+    font-size: 19px;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 15px rgba(100,220,220,.5);
+}
+
+.workshop-sign small {
+    margin-top: 5px;
+
+    font-size: 6px;
+    letter-spacing: 2px;
+
+    color: #60767b;
+}
+
+
+/* =========================================
+   MONITOR
+========================================= */
+
+.developer-monitor {
+    position: absolute;
+
+    left: 50%;
+    top: 95px;
+
+    width: 400px;
+    height: 260px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+}
+
+.monitor-top {
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+
+    background: #202a2f;
+
+    border-radius: 10px 10px 0 0;
+
+    color: #6f888e;
+
+    font-size: 8px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.window-controls span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #52636a;
+}
+
+.monitor-title {
+    margin-left: auto;
+    margin-right: auto;
+
+    letter-spacing: 1px;
+}
+
+.monitor-screen {
+    height: 210px;
+
+    padding: 22px;
+
+    background: #091013;
+
+    border: 3px solid #26343a;
+
+    box-shadow:
+        inset 0 0 40px rgba(60,200,190,.04),
+        0 0 35px rgba(60,190,190,.08);
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
+
+.terminal-line {
+    display: flex;
+    gap: 6px;
+
+    color: #8fa4a9;
+}
+
+.terminal-green {
+    color: #65d6a3;
+}
+
+.terminal-command {
+    color: #b7d4d6;
+}
+
+.terminal-output {
+    margin-bottom: 10px;
+    color: #607d83;
+}
+
+.cursor {
+    color: #69d6c8;
+
+    animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.monitor-stand {
+    position: absolute;
+
+    left: 50%;
+    bottom: -28px;
+
+    width: 50px;
+    height: 30px;
+
+    transform: translateX(-50%);
+
+    background: #252f34;
+}
+
+.monitor-base {
+    position: absolute;
+
+    left: 50%;
+    bottom: -35px;
+
+    width: 120px;
+    height: 10px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #252f34;
+}
+
+
+/* =========================================
+   FLOATING CODE
+========================================= */
+
+.floating-code {
+    position: absolute;
+
+    padding: 10px 14px;
+
+    border: 1px solid rgba(100,220,220,.18);
+
+    border-radius: 10px;
+
+    background: rgba(30,55,60,.65);
+
+    color: #68bebe;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.2);
+}
+
+.code-one {
+    left: 8%;
+    top: 180px;
+}
+
+.code-two {
+    right: 8%;
+    top: 185px;
+}
+
+
+/* =========================================
+   DESK
+========================================= */
+
+.workshop-desk {
+    position: absolute;
+
+    left: 50%;
+    bottom: 105px;
+
+    width: 500px;
+    height: 130px;
+
+    transform: translateX(-50%);
+
+    z-index: 18;
+}
+
+.workshop-desk-top {
+    position: absolute;
+
+    width: 100%;
+    height: 25px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #3d4a4f,
+            #20292d
+        );
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.4);
+}
+
+.workshop-desk-leg {
+    position: absolute;
+
+    top: 23px;
+
+    width: 15px;
+    height: 105px;
+
+    background: #20292d;
+}
+
+.workshop-desk-leg.left {
+    left: 25px;
+}
+
+.workshop-desk-leg.right {
+    right: 25px;
+}
+
+
+/* =========================================
+   KEYBOARD
+========================================= */
+
+.keyboard {
+    position: absolute;
+
+    left: 85px;
+    top: -18px;
+
+    width: 190px;
+    height: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 3px;
+
+    padding: 6px;
+
+    border-radius: 6px;
+
+    background: #151c20;
+}
+
+.keyboard span {
+    border-radius: 2px;
+
+    background: #3d4c52;
+
+    box-shadow:
+        0 0 3px rgba(100,200,200,.1);
+}
+
+
+/* =========================================
+   MOUSE + COFFEE
+========================================= */
+
+.mouse {
+    position: absolute;
+
+    right: 90px;
+    top: -15px;
+
+    width: 30px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #29363b;
+}
+
+.coffee {
+    position: absolute;
+
+    right: 25px;
+    top: -25px;
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   TECH OBJECTS
+========================================= */
+
+.tech-object {
+    position: absolute;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #6bbdbd;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    z-index: 25;
+}
+
+.object-left {
+    left: 18%;
+    bottom: 145px;
+}
+
+.object-right {
+    right: 18%;
+    bottom: 145px;
+}
+
+
+/* =========================================
+   SIDE PANELS
+========================================= */
+
+.workshop-panel {
+    position: absolute;
+
+    width: 150px;
+
+    padding: 13px;
+
+    border: 1px solid rgba(100,200,200,.12);
+
+    border-radius: 10px;
+
+    background: rgba(15,25,29,.8);
+
+    color: #668084;
+
+    font-family: monospace;
+
+    font-size: 7px;
+
+    z-index: 12;
+}
+
+.panel-left {
+    left: 25px;
+    bottom: 120px;
+}
+
+.panel-right {
+    right: 25px;
+    bottom: 120px;
+}
+
+.panel-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 10px;
+
+    color: #75bebe;
+
+    letter-spacing: 1px;
+}
+
+.panel-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.success {
+    color: #5bb98e;
+}
+
+.system-stat {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 5px 0;
+
+    border-bottom: 1px solid rgba(100,200,200,.07);
+}
+
+.system-stat strong {
+    color: #82b4b7;
+}
+
+.system-stat .online {
+    color: #5ed09a;
+}
+
+
+/* =========================================
+   FLOOR
+========================================= */
+
+.workshop-floor {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 18%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #131a1e,
+            #0c1114
+        );
+
+    border-top: 1px solid rgba(100,200,200,.08);
+}
+
+
+/* =========================================
+   HINT
+========================================= */
+
+.workshop-hint {
+    position: absolute;
+
+    right: 20px;
+    bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    background: rgba(30,50,55,.8);
+
+    color: #78a7a9;
+
+    font-size: 8px;
+
+    z-index: 40;
+}
+
+
+/* =========================================
+   SKILLS CONSOLE
+========================================= */
+
+.skills-console {
+    margin-top: 20px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #151c20;
+
+    border: 1px solid rgba(100,180,190,.12);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.12);
+}
+
+.skills-console-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.skills-console-header span:first-child {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #60999b;
+}
+
+.skills-console-header h2 {
+    margin: 5px 0 0;
+
+    color: #dce7e8;
+}
+
+.skills-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    color: #63b68d;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #5bd39b;
+
+    box-shadow:
+        0 0 10px #5bd39b;
+}
+
+
+/* =========================================
+   SKILLS GRID
+========================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.skill-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px;
+
+    border: 1px solid rgba(100,180,190,.1);
+
+    border-radius: 12px;
+
+    background: #1c252a;
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.skill-card:hover {
+    border-color: rgba(100,210,210,.35);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.2);
+}
+
+.skill-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #26363c;
+
+    color: #76caca;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.skill-information {
+    flex: 1;
+}
+
+.skill-name-row {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.skill-name-row strong {
+    font-size: 12px;
+
+    color: #dce6e7;
+}
+
+.skill-name-row span {
+    font-family: monospace;
+
+    font-size: 9px;
+
+    color: #6eb9b9;
+}
+
+.skill-category {
+    margin-top: 3px;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    color: #60767b;
+}
+
+.skill-progress {
+    height: 4px;
+
+    margin-top: 9px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #29343a;
+}
+
+.skill-progress div {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4f9d9e,
+            #82d2c7
+        );
+
+    box-shadow:
+        0 0 8px rgba(100,220,210,.3);
+}
+
+.skill-arrow {
+    color: #5e8588;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.skill-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(5,10,12,.72);
+
+    backdrop-filter: blur(10px);
+}
+
+.skill-modal {
+    position: relative;
+
+    width: min(500px, 100%);
+
+    padding: 40px;
+
+    border: 1px solid rgba(100,210,210,.18);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d292e,
+            #101619
+        );
+
+    color: #dce7e8;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+}
+
+.skill-modal-close {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #26343a;
+
+    color: #9eb4b7;
+
+    cursor: pointer;
+}
+
+.skill-modal-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #26383d;
+
+    color: #75d0ca;
+
+    font-family: monospace;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 25px rgba(90,200,190,.12);
+}
+
+.skill-modal-category {
+    display: block;
+
+    margin-top: 18px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #609a9d;
+}
+
+.skill-modal h2 {
+    margin: 7px 0 20px;
+
+    font-size: 28px;
+}
+
+.skill-modal-level {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.level-number {
+    color: #70c9c2;
+
+    font-family: monospace;
+
+    font-size: 15px;
+}
+
+.level-bar {
+    flex: 1;
+
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #29353a;
+}
+
+.level-bar div {
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4b9c9e,
+            #7ed2c9
+        );
+}
+
+.skill-modal p {
+    line-height: 1.7;
+
+    color: #8da1a4;
+
+    font-size: 13px;
+}
+
+.skill-modal-button {
+    margin-top: 15px;
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(100,210,210,.2);
+
+    border-radius: 8px;
+
+    background: #26373c;
+
+    color: #8ed0cc;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .workshop-scene {
+        min-height: 700px;
+    }
+
+    .developer-monitor {
+        transform:
+            translateX(-50%)
+            scale(.8);
+    }
+
+    .workshop-panel {
+        display: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workshop-desk {
+        transform:
+            translateX(-50%)
+            scale(.8);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .workshop-scene {
+        min-height: 680px;
+    }
+
+    .developer-monitor {
+        top: 110px;
+
+        transform:
+            translateX(-50%)
+            scale(.6);
+    }
+
+    .workshop-desk {
+        transform:
+            translateX(-50%)
+            scale(.65);
+    }
+
+    .floating-code,
+    .tech-object {
+        display: none;
+    }
+
+    .workshop-sign {
+        top: 30px;
+    }
+
+    .skills-console {
+        padding: 17px;
+    }
+
+    .skills-console-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .skills-status {
+        font-size: 7px;
+    }
+}

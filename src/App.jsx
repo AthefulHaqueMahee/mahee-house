@@ -14,15 +14,26 @@ function App() {
 
         <motion.div
           key="home"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.08 }}
+          initial={{
+            opacity: 1,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          exit={{
+            opacity: 0,
+            scale: 1.15,
+            filter: "blur(8px)",
+          }}
           transition={{
-            duration: 1.2,
+            duration: 0.8,
             ease: "easeInOut",
           }}
         >
           <Home
-            onEnter={() => setEnteredHouse(true)}
+            onEnter={() => {
+              setEnteredHouse(true);
+            }}
           />
         </motion.div>
 
@@ -32,19 +43,23 @@ function App() {
           key="interior"
           initial={{
             opacity: 0,
-            scale: 0.92,
+            scale: 1.15,
+            filter: "blur(8px)",
           }}
           animate={{
             opacity: 1,
             scale: 1,
+            filter: "blur(0px)",
           }}
           transition={{
-            duration: 1.2,
+            duration: 1,
             ease: "easeOut",
           }}
         >
           <Interior
-            onBack={() => setEnteredHouse(false)}
+            onBack={() => {
+              setEnteredHouse(false);
+            }}
           />
         </motion.div>
 

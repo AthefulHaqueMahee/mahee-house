@@ -1,0 +1,1258 @@
+/* =========================================
+   LIVING ROOM
+========================================= */
+
+.living-room {
+    position: relative;
+    width: 100%;
+    min-height: 720px;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.living-heading {
+    position: relative;
+    z-index: 20;
+    margin-bottom: 28px;
+}
+
+.living-heading h1 {
+    margin: 6px 0 8px;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.05;
+}
+
+.living-subtitle {
+    max-width: 600px;
+    margin: 0;
+    color: #72706b;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ROOM SCENE
+========================================= */
+
+.living-scene {
+    position: relative;
+
+    min-height: 555px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #eee8dd 0%,
+            #f5f0e8 67%,
+            #c7a47b 67%,
+            #ad865f 100%
+        );
+
+    border: 1px solid rgba(120, 100, 75, .18);
+
+    box-shadow:
+        0 25px 60px rgba(60, 45, 30, .12);
+
+    perspective: 1000px;
+}
+
+
+/* =========================================
+   WALL DETAILS
+========================================= */
+
+.living-scene::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 67%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 49.8%,
+            rgba(120,100,75,.05) 50%,
+            transparent 50.2%
+        );
+
+    opacity: .4;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.living-particles span {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #d5a85f;
+
+    opacity: .4;
+
+    animation:
+        dustFloat 7s infinite ease-in-out;
+}
+
+.living-particles span:nth-child(1) {
+    left: 12%;
+    top: 30%;
+}
+
+.living-particles span:nth-child(2) {
+    left: 37%;
+    top: 22%;
+    animation-delay: 1s;
+}
+
+.living-particles span:nth-child(3) {
+    left: 61%;
+    top: 35%;
+    animation-delay: 2s;
+}
+
+.living-particles span:nth-child(4) {
+    left: 78%;
+    top: 20%;
+    animation-delay: 3s;
+}
+
+.living-particles span:nth-child(5) {
+    left: 88%;
+    top: 45%;
+    animation-delay: 4s;
+}
+
+@keyframes dustFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            translateX(0);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            translateX(8px);
+    }
+}
+
+
+/* =========================================
+   WALL FRAME
+========================================= */
+
+.wall-frame {
+    position: absolute;
+
+    top: 45px;
+    left: 7%;
+
+    width: 190px;
+    height: 225px;
+
+    padding: 14px;
+
+    border: 9px solid #805d3c;
+
+    background: #f7f2e9;
+
+    box-shadow:
+        0 15px 30px rgba(60,40,20,.2);
+
+    cursor: pointer;
+
+    transform-origin: top center;
+}
+
+.wall-frame::before {
+    content: "";
+
+    position: absolute;
+
+    top: -16px;
+    left: 50%;
+
+    width: 50px;
+    height: 8px;
+
+    transform: translateX(-50%);
+
+    background: #63472f;
+}
+
+.frame-inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    border: 1px solid #cbb99e;
+}
+
+.frame-avatar {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b98755,
+            #704a2e
+        );
+
+    color: white;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.frame-inner strong {
+    text-align: center;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #3b352e;
+}
+
+.frame-inner span {
+    margin-top: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #96744f;
+}
+
+
+/* =========================================
+   TOOLTIP
+========================================= */
+
+.object-tooltip {
+    position: absolute;
+
+    left: 50%;
+    bottom: -34px;
+
+    transform: translateX(-50%);
+
+    padding: 6px 10px;
+
+    white-space: nowrap;
+
+    border-radius: 5px;
+
+    background: #29333b;
+
+    color: white;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    transition: .3s ease;
+}
+
+.wall-frame:hover .object-tooltip {
+    opacity: 1;
+}
+
+
+/* =========================================
+   WINDOW
+========================================= */
+
+.room-window {
+    position: absolute;
+
+    top: 45px;
+    right: 8%;
+
+    width: 180px;
+    height: 210px;
+
+    border: 10px solid #72563c;
+
+    background: #bfe6f6;
+
+    box-shadow:
+        0 12px 25px rgba(60,40,20,.15);
+}
+
+.window-sky {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #8dd0f1,
+            #e7f5fa
+        );
+}
+
+.window-sun {
+    position: absolute;
+
+    top: 24px;
+    right: 25px;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #ffe18a;
+
+    box-shadow:
+        0 0 25px rgba(255,225,138,.8);
+}
+
+.window-cloud {
+    position: absolute;
+
+    color: white;
+
+    font-size: 38px;
+
+    opacity: .8;
+}
+
+.cloud-a {
+    top: 70px;
+    left: 15px;
+}
+
+.cloud-b {
+    top: 125px;
+    right: 10px;
+}
+
+.window-cross-h {
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 8px;
+
+    transform: translateY(-50%);
+
+    background: #72563c;
+
+    z-index: 5;
+}
+
+.window-cross-v {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 8px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background: #72563c;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   PLANT
+========================================= */
+
+.room-plant {
+    position: absolute;
+
+    left: 3%;
+    bottom: 18%;
+
+    transform-origin: bottom center;
+
+    font-size: 55px;
+
+    z-index: 12;
+}
+
+.plant-leaves {
+    position: relative;
+
+    z-index: 2;
+}
+
+.plant-pot {
+    position: relative;
+
+    margin-top: -15px;
+
+    font-size: 50px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   BOOKSHELF
+========================================= */
+
+.bookshelf {
+    position: absolute;
+
+    right: 4%;
+    bottom: 20%;
+
+    width: 135px;
+    height: 240px;
+
+    border: 0;
+
+    background: #69492f;
+
+    cursor: pointer;
+
+    box-shadow:
+        8px 10px 20px rgba(50,30,15,.2);
+
+    transition: .3s ease;
+}
+
+.bookshelf:hover {
+    filter: brightness(1.08);
+}
+
+.shelf-top,
+.shelf-middle,
+.shelf-bottom {
+    position: absolute;
+
+    left: -6px;
+
+    width: calc(100% + 12px);
+
+    height: 10px;
+
+    background: #805b3a;
+}
+
+.shelf-top {
+    top: 0;
+}
+
+.shelf-middle {
+    top: 50%;
+}
+
+.shelf-bottom {
+    bottom: 0;
+}
+
+.books {
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+
+    top: 20px;
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+.books-bottom {
+    top: auto;
+    bottom: 20px;
+}
+
+.book {
+    width: 18px;
+
+    height: 70px;
+
+    border-radius: 2px;
+
+    background: #9e7550;
+
+    box-shadow:
+        2px 0 0 rgba(0,0,0,.12);
+}
+
+.book-one {
+    height: 78px;
+}
+
+.book-two {
+    height: 60px;
+}
+
+.book-three {
+    height: 85px;
+}
+
+.book-four {
+    height: 68px;
+}
+
+.book-five {
+    height: 74px;
+}
+
+.book-six {
+    height: 65px;
+}
+
+.book-seven {
+    height: 85px;
+}
+
+.book-eight {
+    height: 72px;
+}
+
+.bookshelf-label {
+    position: absolute;
+
+    bottom: -28px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #684c34;
+}
+
+
+/* =========================================
+   FLOOR LAMP
+========================================= */
+
+.floor-lamp {
+    position: absolute;
+
+    left: 23%;
+
+    bottom: 18%;
+
+    width: 65px;
+    height: 250px;
+
+    z-index: 11;
+}
+
+.lamp-shade {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 72px;
+    height: 65px;
+
+    background: #d5ae73;
+
+    clip-path:
+        polygon(
+            18% 0,
+            82% 0,
+            100% 100%,
+            0 100%
+        );
+
+    box-shadow:
+        0 0 30px rgba(255,210,120,.45);
+}
+
+.lamp-glow {
+    position: absolute;
+
+    top: 35px;
+    left: 50%;
+
+    width: 120px;
+    height: 120px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,210,120,.25),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+.lamp-pole {
+    position: absolute;
+
+    top: 60px;
+    left: 50%;
+
+    width: 7px;
+    height: 175px;
+
+    transform: translateX(-50%);
+
+    background: #594331;
+}
+
+.lamp-base {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 55px;
+    height: 12px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #594331;
+}
+
+
+/* =========================================
+   SOFA
+========================================= */
+
+.sofa {
+    position: absolute;
+
+    left: 50%;
+    bottom: 14%;
+
+    width: 340px;
+    height: 190px;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    transition: .3s ease;
+}
+
+.sofa-back {
+    position: absolute;
+
+    bottom: 55px;
+    left: 25px;
+
+    width: 290px;
+    height: 100px;
+
+    display: flex;
+
+    gap: 7px;
+
+    padding: 12px;
+
+    border-radius: 18px 18px 8px 8px;
+
+    background: #80624a;
+
+    box-shadow:
+        inset 0 8px 15px rgba(255,255,255,.08);
+}
+
+.sofa-cushion {
+    flex: 1;
+
+    border-radius: 12px;
+
+    background: #96785e;
+
+    box-shadow:
+        inset 0 0 10px rgba(0,0,0,.12);
+}
+
+.sofa-seat {
+    position: absolute;
+
+    left: 18px;
+    bottom: 20px;
+
+    width: 305px;
+    height: 65px;
+
+    border-radius: 10px;
+
+    background: #73563f;
+}
+
+.sofa-pillow {
+    position: absolute;
+
+    right: 25px;
+    top: 12px;
+
+    width: 42px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #c5a66d;
+
+    color: #fff;
+}
+
+.sofa-arm {
+    position: absolute;
+
+    bottom: 20px;
+
+    width: 35px;
+    height: 100px;
+
+    border-radius: 12px;
+
+    background: #694b35;
+}
+
+.sofa-arm.left {
+    left: 0;
+}
+
+.sofa-arm.right {
+    right: 0;
+}
+
+.sofa-leg {
+    position: absolute;
+
+    bottom: 4px;
+
+    width: 10px;
+    height: 20px;
+
+    background: #493424;
+}
+
+.sofa-leg.left {
+    left: 35px;
+}
+
+.sofa-leg.right {
+    right: 35px;
+}
+
+
+/* =========================================
+   COFFEE TABLE
+========================================= */
+
+.coffee-table {
+    position: absolute;
+
+    left: 50%;
+    bottom: 5%;
+
+    width: 190px;
+    height: 75px;
+
+    transform: translateX(-50%);
+
+    z-index: 15;
+
+    cursor: pointer;
+}
+
+.table-top {
+    width: 190px;
+    height: 22px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 45px;
+
+    border-radius: 50%;
+
+    background: #765238;
+
+    color: white;
+
+    box-shadow:
+        0 8px 12px rgba(50,30,15,.25);
+}
+
+.table-leg {
+    position: absolute;
+
+    top: 18px;
+
+    width: 10px;
+    height: 55px;
+
+    background: #563a27;
+}
+
+.table-leg.left {
+    left: 30px;
+}
+
+.table-leg.right {
+    right: 30px;
+}
+
+
+/* =========================================
+   MINI TERMINAL
+========================================= */
+
+.mini-terminal {
+    position: absolute;
+
+    left: 7%;
+    bottom: 20%;
+
+    width: 165px;
+    height: 115px;
+
+    padding: 0;
+
+    border: 1px solid #26333b;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background: #10181d;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.25);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    z-index: 13;
+}
+
+.terminal-top {
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding-left: 8px;
+
+    background: #202c33;
+}
+
+.terminal-top span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #9b8870;
+}
+
+.terminal-content {
+    padding: 10px;
+
+    font-family: monospace;
+
+    font-size: 8px;
+
+    color: #a9c7ad;
+}
+
+.terminal-content p {
+    margin: 3px 0;
+}
+
+.terminal-command {
+    color: #e0c27a;
+}
+
+.terminal-output {
+    color: #8eb5a1;
+}
+
+
+/* =========================================
+   FLOOR
+========================================= */
+
+.living-floor {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 33%;
+
+    pointer-events: none;
+}
+
+.floor-rug {
+    position: absolute;
+
+    left: 50%;
+    top: 35px;
+
+    width: 430px;
+    height: 145px;
+
+    transform:
+        translateX(-50%)
+        perspective(300px)
+        rotateX(40deg);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #9b7658,
+            #806045
+        );
+
+    opacity: .75;
+}
+
+
+/* =========================================
+   INTERACTION HINT
+========================================= */
+
+.interaction-hint {
+    position: absolute;
+
+    right: 25px;
+    bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.7);
+
+    backdrop-filter: blur(10px);
+
+    color: #735b40;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    z-index: 30;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.living-actions {
+    margin-top: 24px;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.object-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20,25,28,.55);
+
+    backdrop-filter: blur(8px);
+}
+
+.object-modal {
+    position: relative;
+
+    width: min(480px, 100%);
+
+    padding: 38px;
+
+    border-radius: 20px;
+
+    background: #f8f5ef;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
+
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #ece6dc;
+
+    color: #5b5147;
+
+    cursor: pointer;
+}
+
+.modal-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #29343c;
+
+    color: #d9b873;
+}
+
+.modal-kicker {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #9a7954;
+}
+
+.object-modal h2 {
+    margin: 8px 0 14px;
+
+    color: #302b26;
+}
+
+.object-modal p {
+    margin: 0 auto 24px;
+
+    max-width: 390px;
+
+    color: #686158;
+
+    line-height: 1.7;
+}
+
+.modal-ok {
+    padding: 11px 18px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #29343c;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.modal-ok:hover {
+    transform: translateY(-2px);
+
+    background: #394850;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .living-scene {
+        min-height: 700px;
+    }
+
+    .wall-frame {
+        left: 5%;
+        transform: scale(.8);
+        transform-origin: top left;
+    }
+
+    .room-window {
+        right: 5%;
+        transform: scale(.8);
+        transform-origin: top right;
+    }
+
+    .bookshelf {
+        right: 2%;
+        transform: scale(.8);
+        transform-origin: bottom right;
+    }
+
+    .floor-lamp {
+        left: 18%;
+        transform: scale(.8);
+        transform-origin: bottom center;
+    }
+
+    .mini-terminal {
+        left: 3%;
+        transform: scale(.8);
+        transform-origin: bottom left;
+    }
+
+    .sofa {
+        transform:
+            translateX(-50%)
+            scale(.82);
+
+        transform-origin: bottom center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .living-room {
+        min-height: 650px;
+    }
+
+    .living-scene {
+        min-height: 650px;
+    }
+
+    .wall-frame {
+        transform: scale(.6);
+    }
+
+    .room-window {
+        transform: scale(.6);
+    }
+
+    .bookshelf {
+        transform: scale(.6);
+    }
+
+    .floor-lamp {
+        display: none;
+    }
+
+    .mini-terminal {
+        display: none;
+    }
+
+    .sofa {
+        transform:
+            translateX(-50%)
+            scale(.65);
+    }
+
+    .coffee-table {
+        transform:
+            translateX(-50%)
+            scale(.75);
+    }
+
+    .interaction-hint {
+        font-size: 8px;
+    }
+
+}

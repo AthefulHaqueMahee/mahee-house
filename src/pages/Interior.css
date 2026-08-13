@@ -3902,3 +3902,1034 @@ a.contact-card:hover {
 
     z-index: 1;
 }
+
+
+/* =========================================
+   MAHEE'S HOUSE — INTERIOR UPGRADE
+========================================= */
+
+.interior-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(190, 210, 225, 0.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f7f5f0,
+            #ebe7df
+        );
+
+    color: #24313a;
+
+    padding: 28px 40px 40px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.interior-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+.interior-title {
+    min-width: 0;
+}
+
+
+.house-label {
+    margin: 0 0 6px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 800;
+
+    color: #8b6847;
+}
+
+
+.interior-title h1 {
+    margin: 0;
+
+    font-size: clamp(
+        28px,
+        4vw,
+        46px
+    );
+
+    line-height: 1.05;
+}
+
+
+.room-location {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #8a8a83;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   HEADER BUTTONS
+========================================= */
+
+.interior-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+.map-button,
+.back-home {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 11px 16px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.map-button {
+    background: #ffffff;
+
+    color: #34414a;
+
+    border: 1px solid #ddd8cf;
+}
+
+
+.back-home {
+    background: #29343c;
+
+    color: white;
+}
+
+
+.map-button:hover,
+.back-home:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.12);
+}
+
+
+/* =========================================
+   HOUSE MAP
+========================================= */
+
+.house-map {
+    background: rgba(255,255,255,.82);
+
+    border: 1px solid rgba(210,205,195,.8);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 18px 45px rgba(40,45,50,.08);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.map-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.map-heading span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 800;
+
+    color: #9b7651;
+}
+
+
+.map-heading h2 {
+    margin: 4px 0 0;
+
+    font-size: 22px;
+}
+
+
+.map-heading p {
+    margin: 0;
+
+    color: #85847d;
+
+    font-size: 13px;
+}
+
+
+.map-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.map-room {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto auto 1fr auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: left;
+
+    padding: 13px;
+
+    background: #faf9f6;
+
+    border: 1px solid #e1ddd5;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: #29343c;
+
+    transition:
+        background .25s ease,
+        border .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.map-room:hover {
+    background: white;
+
+    border-color: #c9b08f;
+
+    box-shadow:
+        0 10px 25px rgba(40,45,50,.08);
+}
+
+
+.map-room-active {
+    background: #29343c;
+
+    color: white;
+
+    border-color: #29343c;
+}
+
+
+.map-room-number {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    color: #9d9b94;
+}
+
+
+.map-room-active .map-room-number {
+    color: #d4b27e;
+}
+
+
+.map-room-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eeeae2;
+}
+
+
+.map-room-active .map-room-icon {
+    background: rgba(255,255,255,.12);
+}
+
+
+.map-room-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.map-room-info strong {
+    font-size: 12px;
+}
+
+
+.map-room-info small {
+    font-size: 10px;
+
+    color: #99968f;
+}
+
+
+.map-room-active .map-room-info small {
+    color: #bcbab5;
+}
+
+
+.map-room-arrow {
+    font-size: 16px;
+
+    opacity: .55;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.interior-layout {
+    display: grid;
+
+    grid-template-columns:
+        245px minmax(0, 1fr);
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.room-menu {
+    background: rgba(255,255,255,.78);
+
+    border: 1px solid #ded9d0;
+
+    border-radius: 16px;
+
+    padding: 14px;
+
+    box-shadow:
+        0 15px 35px rgba(40,45,50,.07);
+
+    position: sticky;
+
+    top: 20px;
+}
+
+
+.menu-title {
+    padding: 8px 10px 14px;
+
+    border-bottom: 1px solid #e8e4dc;
+
+    margin-bottom: 8px;
+}
+
+
+.menu-title span {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #a08a70;
+
+    font-weight: 800;
+}
+
+
+.menu-title strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 18px;
+}
+
+
+.room-button {
+    position: relative;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        25px 32px 1fr auto;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    margin-bottom: 5px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    color: #56616a;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+}
+
+
+.room-button:hover {
+    background: #f2efe9;
+
+    color: #29343c;
+}
+
+
+.room-button.active {
+    background: #29343c;
+
+    color: white;
+
+    box-shadow:
+        0 8px 18px rgba(41,52,60,.18);
+}
+
+
+.room-number {
+    font-size: 9px;
+
+    font-weight: 800;
+
+    color: #aaa69d;
+}
+
+
+.room-button.active .room-number {
+    color: #d5b681;
+}
+
+
+.room-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eeeae3;
+}
+
+
+.room-button.active .room-icon {
+    background: rgba(255,255,255,.12);
+}
+
+
+.room-name {
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.room-arrow {
+    font-size: 15px;
+
+    opacity: .5;
+}
+
+
+/* =========================================
+   ROOM AREA
+========================================= */
+
+.room-area {
+    min-width: 0;
+
+    min-height: 600px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.94),
+            rgba(250,248,243,.9)
+        );
+
+    border: 1px solid #ded9d0;
+
+    border-radius: 18px;
+
+    padding: clamp(
+        22px,
+        4vw,
+        42px
+    );
+
+    box-shadow:
+        0 20px 50px rgba(40,45,50,.08);
+
+    overflow: hidden;
+}
+
+
+.room-content {
+    width: 100%;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .map-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .interior-page {
+        padding: 20px;
+    }
+
+
+    .interior-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .interior-actions {
+        width: 100%;
+    }
+
+
+    .map-button,
+    .back-home {
+        flex: 1;
+    }
+
+
+    .interior-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .room-menu {
+        position: static;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 5px;
+    }
+
+
+    .menu-title {
+        grid-column: 1 / -1;
+    }
+
+
+    .room-button {
+        margin: 0;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .interior-page {
+        padding: 15px;
+    }
+
+
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .map-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .room-menu {
+        grid-template-columns: 1fr;
+    }
+
+
+    .room-area {
+        padding: 20px;
+
+        min-height: 500px;
+    }
+
+}
+
+/* =========================================
+   ROOM ATMOSPHERE SYSTEM
+========================================= */
+
+.interior-page {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   AMBIENT BACKGROUND
+========================================= */
+
+.ambient-background {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    overflow: hidden;
+}
+
+
+.ambient-glow {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: .35;
+
+    transition:
+        background 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.ambient-glow-one {
+    top: -180px;
+    right: -120px;
+}
+
+
+.ambient-glow-two {
+    bottom: -220px;
+    left: 15%;
+}
+
+
+.ambient-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .18;
+
+    background-image:
+        linear-gradient(
+            rgba(80,80,80,.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(80,80,80,.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black,
+            transparent 75%
+        );
+}
+
+
+/* =========================================
+   ROOM-SPECIFIC COLORS
+========================================= */
+
+
+/* LIVING ROOM */
+
+.atmosphere-warm .ambient-glow-one {
+    background: #e8b76b;
+}
+
+.atmosphere-warm .ambient-glow-two {
+    background: #d88955;
+}
+
+
+/* EDUCATION */
+
+.atmosphere-study .ambient-glow-one {
+    background: #91a9c7;
+}
+
+.atmosphere-study .ambient-glow-two {
+    background: #c7a56a;
+}
+
+
+/* SKILLS */
+
+.atmosphere-tech .ambient-glow-one {
+    background: #62a9a2;
+}
+
+.atmosphere-tech .ambient-glow-two {
+    background: #607fc2;
+}
+
+
+/* PROJECTS */
+
+.atmosphere-lab .ambient-glow-one {
+    background: #7184d5;
+}
+
+.atmosphere-lab .ambient-glow-two {
+    background: #6bb6c0;
+}
+
+
+/* EXPERIENCE */
+
+.atmosphere-office .ambient-glow-one {
+    background: #9c876e;
+}
+
+.atmosphere-office .ambient-glow-two {
+    background: #6f8294;
+}
+
+
+/* HOBBIES */
+
+.atmosphere-creative .ambient-glow-one {
+    background: #c486ad;
+}
+
+.atmosphere-creative .ambient-glow-two {
+    background: #e2a65f;
+}
+
+
+/* CERTIFICATES */
+
+.atmosphere-gallery .ambient-glow-one {
+    background: #d8b45f;
+}
+
+.atmosphere-gallery .ambient-glow-two {
+    background: #b78654;
+}
+
+
+/* CONTACT */
+
+.atmosphere-contact .ambient-glow-one {
+    background: #6a91bb;
+}
+
+.atmosphere-contact .ambient-glow-two {
+    background: #75a99b;
+}
+
+
+/* =========================================
+   TITLE NUMBER
+========================================= */
+
+.title-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.title-room-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    background: #29343c;
+
+    color: #d7b77e;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 8px 20px rgba(40,45,50,.15);
+}
+
+
+/* =========================================
+   ATMOSPHERE LABEL
+========================================= */
+
+.room-atmosphere-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin:
+        -10px 0
+        24px
+        63px;
+
+    color: #817c73;
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+
+.room-atmosphere-label svg {
+    color: #b28b5b;
+}
+
+
+/* =========================================
+   ROOM CORNERS
+========================================= */
+
+.room-area {
+    position: relative;
+}
+
+
+.room-corner {
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    pointer-events: none;
+
+    opacity: .5;
+}
+
+
+.room-corner-top {
+    top: 18px;
+    right: 18px;
+
+    border-top: 1px solid #c9b28f;
+    border-right: 1px solid #c9b28f;
+}
+
+
+.room-corner-bottom {
+    bottom: 18px;
+    left: 18px;
+
+    border-bottom: 1px solid #c9b28f;
+    border-left: 1px solid #c9b28f;
+}
+
+
+/* =========================================
+   ACTIVE ROOM GLOW
+========================================= */
+
+.atmosphere-warm .room-area {
+    box-shadow:
+        0 20px 50px rgba(160,110,60,.10);
+}
+
+
+.atmosphere-study .room-area {
+    box-shadow:
+        0 20px 50px rgba(70,100,140,.10);
+}
+
+
+.atmosphere-tech .room-area {
+    box-shadow:
+        0 20px 50px rgba(60,130,130,.10);
+}
+
+
+.atmosphere-lab .room-area {
+    box-shadow:
+        0 20px 50px rgba(70,90,160,.10);
+}
+
+
+.atmosphere-office .room-area {
+    box-shadow:
+        0 20px 50px rgba(100,90,70,.10);
+}
+
+
+.atmosphere-creative .room-area {
+    box-shadow:
+        0 20px 50px rgba(160,80,130,.10);
+}
+
+
+.atmosphere-gallery .room-area {
+    box-shadow:
+        0 20px 50px rgba(180,140,50,.12);
+}
+
+
+.atmosphere-contact .room-area {
+    box-shadow:
+        0 20px 50px rgba(60,110,150,.10);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .room-atmosphere-label {
+        margin-left: 0;
+    }
+
+
+    .title-room-number {
+        width: 40px;
+        height: 40px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .title-row {
+        gap: 10px;
+    }
+
+
+    .room-atmosphere-label {
+        margin-top: 0;
+
+        margin-bottom: 18px;
+    }
+
+}

@@ -4,9 +4,21 @@ import "./House.css";
 
 function House({ onEnter }) {
   const [isEvening, setIsEvening] = useState(false);
+  const [entering, setEntering] = useState(false);
+
+  const handleEnter = () => {
+    if (entering) return;
+
+    setEntering(true);
+
+    // Give the cinematic animation time to play
+    setTimeout(() => {
+      onEnter();
+    }, 1400);
+  };
 
   return (
-    <main className={`house-scene ${isEvening ? "evening" : "day"}`}>
+    <main className={`house-scene ${isEvening ? "evening" : "day"} ${entering ? "entering" : ""}`}>
 
       {/* =========================
           SKY
@@ -27,7 +39,10 @@ function House({ onEnter }) {
                   left: `${5 + ((index * 37) % 90)}%`,
                   top: `${5 + ((index * 23) % 48)}%`,
                 }}
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{
+                  opacity: 0,
+                  scale: 0,
+                }}
                 animate={{
                   opacity: [0.2, 1, 0.3],
                   scale: [0.7, 1.2, 0.8],
@@ -47,14 +62,17 @@ function House({ onEnter }) {
       </AnimatePresence>
 
       {/* =========================
-          SUN
+          SUN / MOON
       ========================= */}
       <AnimatePresence mode="wait">
         {!isEvening ? (
           <motion.div
             key="sun"
             className="sun"
-            initial={{ opacity: 0, scale: 0.7 }}
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+            }}
             animate={{
               opacity: 1,
               scale: 1,
@@ -78,10 +96,22 @@ function House({ onEnter }) {
           <motion.div
             key="moon"
             className="moon"
-            initial={{ opacity: 0, scale: 0.5, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
           />
         )}
       </AnimatePresence>
@@ -91,7 +121,9 @@ function House({ onEnter }) {
       ========================= */}
       <motion.div
         className="cloud cloud-one"
-        animate={{ x: [0, 35, 0] }}
+        animate={{
+          x: [0, 35, 0],
+        }}
         transition={{
           duration: 18,
           repeat: Infinity,
@@ -103,7 +135,9 @@ function House({ onEnter }) {
 
       <motion.div
         className="cloud cloud-two"
-        animate={{ x: [0, -30, 0] }}
+        animate={{
+          x: [0, -30, 0],
+        }}
         transition={{
           duration: 22,
           repeat: Infinity,
@@ -118,7 +152,9 @@ function House({ onEnter }) {
       ========================= */}
       <motion.div
         className="tree tree-left"
-        animate={{ rotate: [0, 1.2, 0] }}
+        animate={{
+          rotate: [0, 1.2, 0],
+        }}
         transition={{
           duration: 4,
           repeat: Infinity,
@@ -131,7 +167,9 @@ function House({ onEnter }) {
 
       <motion.div
         className="tree tree-right"
-        animate={{ rotate: [0, -1.2, 0] }}
+        animate={{
+          rotate: [0, -1.2, 0],
+        }}
         transition={{
           duration: 4.5,
           repeat: Infinity,
@@ -157,11 +195,18 @@ function House({ onEnter }) {
       ========================= */}
       <motion.div
         className="main-house"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{
+          y: 30,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: entering ? 0.25 : 1,
+          scale: entering ? 1.35 : 1,
+        }}
         transition={{
-          duration: 1,
-          ease: "easeOut",
+          duration: entering ? 1.4 : 1,
+          ease: "easeInOut",
         }}
       >
 
@@ -179,22 +224,51 @@ function House({ onEnter }) {
             <div className="window-cross vertical" />
           </div>
 
-          {/* PORCH LIGHT */}
+          {/* LEFT PORCH LIGHT */}
           <div className="porch-light porch-light-left" />
 
           {/* DOOR */}
           <motion.div
-            className="entrance-door"
-            onClick={onEnter}
+            className={`entrance-door ${entering ? "door-entering" : ""}`}
+            onClick={handleEnter}
             role="button"
             tabIndex={0}
-            whileHover={{
-              scale: 1.03,
-              y: -3,
-            }}
-            whileTap={{
-              scale: 0.97,
-            }}
+            whileHover={
+              !entering
+                ? {
+                    scale: 1.03,
+                    y: -3,
+                  }
+                : {}
+            }
+            whileTap={
+              !entering
+                ? {
+                    scale: 0.97,
+                  }
+                : {}
+            }
+            animate={
+              entering
+                ? {
+                    scale: [1, 1.05, 1.15, 1.3],
+                    boxShadow: [
+                      "0 10px 20px rgba(0,0,0,.2)",
+                      "0 0 35px rgba(255,210,120,.7)",
+                      "0 0 80px rgba(255,210,120,.9)",
+                      "0 0 150px rgba(255,255,255,1)",
+                    ],
+                  }
+                : {}
+            }
+            transition={
+              entering
+                ? {
+                    duration: 1.4,
+                    ease: "easeInOut",
+                  }
+                : {}
+            }
           >
 
             <div className="door-handle" />
@@ -206,7 +280,7 @@ function House({ onEnter }) {
 
           </motion.div>
 
-          {/* PORCH LIGHT */}
+          {/* RIGHT PORCH LIGHT */}
           <div className="porch-light porch-light-right" />
 
           {/* RIGHT WINDOW */}
@@ -231,11 +305,16 @@ function House({ onEnter }) {
       ========================= */}
       <motion.div
         className="welcome-message"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: entering ? 0 : 1,
+          y: entering ? -30 : 0,
+        }}
         transition={{
-          delay: 0.8,
-          duration: 1,
+          duration: 0.7,
         }}
       >
         <span>WELCOME TO MY WORLD</span>
@@ -257,9 +336,55 @@ function House({ onEnter }) {
         whileTap={{
           scale: 0.95,
         }}
+        animate={{
+          opacity: entering ? 0 : 1,
+        }}
       >
         {isEvening ? "☀️ Day Mode" : "🌙 Evening Mode"}
       </motion.button>
+
+      {/* =========================
+          CINEMATIC WHITE FLASH
+      ========================= */}
+      <AnimatePresence>
+        {entering && (
+          <>
+            <motion.div
+              className="door-flash"
+              initial={{
+                opacity: 0,
+                scale: 0.2,
+              }}
+              animate={{
+                opacity: [0, 0.15, 0.4, 1],
+                scale: [0.2, 0.6, 1.5, 4],
+              }}
+              transition={{
+                duration: 1.4,
+                ease: "easeIn",
+              }}
+            />
+
+            <motion.div
+              className="entering-text"
+              initial={{
+                opacity: 0,
+                scale: 0.8,
+              }}
+              animate={{
+                opacity: [0, 1, 1, 0],
+                scale: [0.8, 1, 1.1, 1.2],
+              }}
+              transition={{
+                duration: 1.3,
+                ease: "easeInOut",
+              }}
+            >
+              ENTERING MAHEE'S WORLD
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
     </main>
   );

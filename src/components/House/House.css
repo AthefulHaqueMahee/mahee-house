@@ -921,3 +921,125 @@
         font-size: 28px;
     }
 }
+
+/* ========================================
+   CINEMATIC DOOR ENTRANCE
+======================================== */
+
+.house-scene.entering {
+    cursor: wait;
+}
+
+
+/* House zoom */
+
+.house-scene.entering .main-house {
+    z-index: 100;
+}
+
+
+/* Door becomes the center of attention */
+
+.entrance-door.door-entering {
+    z-index: 120;
+}
+
+
+/* Cinematic light emerging from door */
+
+.door-flash {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    width: 180px;
+    height: 180px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #fff6d6 25%,
+            #ffd978 55%,
+            rgba(255,217,120,0) 75%
+        );
+
+    z-index: 200;
+
+    pointer-events: none;
+
+    filter: blur(2px);
+}
+
+
+/* Entering text */
+
+.entering-text {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 250;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: clamp(
+        20px,
+        3vw,
+        38px
+    );
+
+    font-weight: 700;
+
+    letter-spacing: 6px;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.8),
+        0 0 35px rgba(255,210,120,.7);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   ENTERING SCREEN ATMOSPHERE
+======================================== */
+
+.house-scene.entering .sky,
+.house-scene.entering .grass,
+.house-scene.entering .path,
+.house-scene.entering .tree,
+.house-scene.entering .cloud,
+.house-scene.entering .welcome-message {
+    transition:
+        opacity .8s ease;
+}
+
+
+/* ========================================
+   MOBILE CINEMATIC
+======================================== */
+
+@media (max-width: 550px) {
+
+    .entering-text {
+        font-size: 18px;
+
+        letter-spacing: 3px;
+
+        padding: 0 20px;
+    }
+
+}

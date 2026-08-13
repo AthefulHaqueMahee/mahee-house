@@ -1,0 +1,1111 @@
+/* =========================================
+   STUDY ROOM
+========================================= */
+
+.study-room {
+    position: relative;
+    width: 100%;
+    min-height: 750px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.study-header {
+    position: relative;
+    z-index: 20;
+    margin-bottom: 25px;
+}
+
+.study-header h1 {
+    margin: 6px 0 8px;
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    line-height: 1.05;
+}
+
+.study-header p:last-child {
+    max-width: 650px;
+
+    color: #77716a;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   STUDY SCENE
+========================================= */
+
+.study-scene {
+    position: relative;
+
+    min-height: 560px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #e8dfd1 0%,
+            #f4eee5 68%,
+            #9c7754 68%,
+            #805f43 100%
+        );
+
+    border: 1px solid rgba(100,75,50,.15);
+
+    box-shadow:
+        0 25px 60px rgba(60,40,20,.13);
+}
+
+
+/* =========================================
+   WALL TITLE
+========================================= */
+
+.study-wall-title {
+    position: absolute;
+
+    top: 30px;
+    right: 35%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    transform: rotate(-2deg);
+
+    color: #765c42;
+}
+
+.study-wall-title span {
+    font-size: 9px;
+
+    letter-spacing: 4px;
+}
+
+.study-wall-title strong {
+    margin-top: 3px;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   DEGREE FRAME
+========================================= */
+
+.degree-frame {
+    position: absolute;
+
+    top: 75px;
+    left: 6%;
+
+    width: 215px;
+    height: 250px;
+
+    padding: 12px;
+
+    border: 9px solid #805d3c;
+
+    background: #f5efe5;
+
+    box-shadow:
+        0 15px 30px rgba(50,30,15,.2);
+
+    cursor: pointer;
+
+    z-index: 8;
+}
+
+.degree-inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #c2a77e;
+
+    color: #705536;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.degree-inner svg {
+    margin-bottom: 12px;
+}
+
+.degree-inner span {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.degree-inner strong {
+    margin: 12px 0;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+.degree-inner small {
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    color: #927354;
+}
+
+.degree-light {
+    position: absolute;
+
+    inset: -20px;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,215,130,.15),
+            transparent 65%
+        );
+}
+
+
+/* =========================================
+   BOOKSHELF
+========================================= */
+
+.study-bookshelf {
+    position: absolute;
+
+    right: 5%;
+    top: 70px;
+
+    width: 170px;
+    height: 275px;
+
+    background: #65452f;
+
+    box-shadow:
+        8px 12px 25px rgba(40,25,15,.22);
+
+    z-index: 8;
+}
+
+.bookshelf-top {
+    position: absolute;
+
+    top: -10px;
+    left: -7px;
+
+    width: calc(100% + 14px);
+    height: 12px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #805b3b;
+
+    color: #f4e9d7;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+.study-shelf {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-bottom: 9px solid #815c3b;
+
+    font-size: 38px;
+}
+
+.shelf-one {
+    top: 20px;
+}
+
+.shelf-two {
+    top: 105px;
+}
+
+.shelf-three {
+    top: 190px;
+}
+
+
+/* =========================================
+   DESK
+========================================= */
+
+.study-desk {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 18%;
+
+    width: 360px;
+    height: 180px;
+
+    transform: translateX(-50%);
+
+    z-index: 14;
+}
+
+.desk-top {
+    position: absolute;
+
+    top: 0;
+
+    width: 100%;
+    height: 25px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #9a704c,
+            #704b30
+        );
+
+    box-shadow:
+        0 8px 12px rgba(40,25,15,.2);
+}
+
+.desk-leg {
+    position: absolute;
+
+    top: 22px;
+
+    width: 15px;
+    height: 155px;
+
+    background: #63432c;
+}
+
+.desk-leg.left {
+    left: 25px;
+}
+
+.desk-leg.right {
+    right: 25px;
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+.desk-laptop {
+    position: absolute;
+
+    left: 65px;
+    top: -65px;
+
+    width: 150px;
+    height: 90px;
+}
+
+.laptop-screen {
+    width: 150px;
+    height: 82px;
+
+    padding: 12px;
+
+    border: 6px solid #263239;
+
+    border-radius: 8px 8px 3px 3px;
+
+    background: #10181c;
+
+    color: #8fbc9b;
+
+    font-family: monospace;
+
+    font-size: 7px;
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,.25);
+}
+
+.code-line {
+    margin-bottom: 6px;
+}
+
+.laptop-base {
+    position: absolute;
+
+    left: -12px;
+    bottom: -2px;
+
+    width: 175px;
+    height: 8px;
+
+    border-radius: 5px;
+
+    background: #37454c;
+}
+
+
+/* =========================================
+   DESK OBJECTS
+========================================= */
+
+.desk-book {
+    position: absolute;
+
+    right: 60px;
+    top: -32px;
+
+    font-size: 32px;
+}
+
+.desk-cup {
+    position: absolute;
+
+    right: 20px;
+    top: -32px;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   LAMP
+========================================= */
+
+.study-lamp {
+    position: absolute;
+
+    left: 25%;
+
+    bottom: 19%;
+
+    width: 70px;
+    height: 180px;
+
+    z-index: 15;
+}
+
+.study-lamp-shade {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 65px;
+    height: 50px;
+
+    background: #d3a968;
+
+    clip-path:
+        polygon(
+            20% 0,
+            80% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+.study-lamp-light {
+    position: absolute;
+
+    top: 20px;
+    left: 50%;
+
+    width: 110px;
+    height: 110px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,215,130,.28),
+            transparent 70%
+        );
+}
+
+.study-lamp-arm {
+    position: absolute;
+
+    top: 45px;
+    left: 50%;
+
+    width: 7px;
+    height: 120px;
+
+    transform: translateX(-50%);
+
+    background: #59412e;
+}
+
+.study-lamp-base {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 60px;
+    height: 10px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #59412e;
+}
+
+
+/* =========================================
+   CHAIR
+========================================= */
+
+.study-chair {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 4%;
+
+    width: 120px;
+    height: 120px;
+
+    transform:
+        translateX(-50%)
+        translateY(60px);
+
+    z-index: 13;
+}
+
+.chair-back {
+    position: absolute;
+
+    left: 15px;
+    top: 0;
+
+    width: 90px;
+    height: 75px;
+
+    border-radius: 12px;
+
+    background: #76563c;
+}
+
+.chair-seat {
+    position: absolute;
+
+    left: 10px;
+    top: 65px;
+
+    width: 100px;
+    height: 20px;
+
+    border-radius: 8px;
+
+    background: #674830;
+}
+
+.chair-leg {
+    position: absolute;
+
+    top: 80px;
+
+    width: 9px;
+    height: 45px;
+
+    background: #4e3625;
+}
+
+.chair-leg.left {
+    left: 22px;
+}
+
+.chair-leg.right {
+    right: 22px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.academic-timeline {
+    position: absolute;
+
+    left: 50%;
+    bottom: 37%;
+
+    width: 650px;
+    height: 60px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+}
+
+.timeline-line {
+    position: absolute;
+
+    top: 17px;
+    left: 10%;
+
+    width: 80%;
+    height: 3px;
+
+    background: #b38a5f;
+}
+
+.timeline-node {
+    position: absolute;
+
+    top: 0;
+
+    width: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 3;
+}
+
+.node-1 {
+    left: 0;
+}
+
+.node-2 {
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.node-3 {
+    right: 0;
+}
+
+.timeline-dot {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #705035;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    border: 4px solid #e7d9c4;
+
+    box-shadow:
+        0 5px 10px rgba(50,30,15,.2);
+}
+
+.timeline-node span {
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #684d34;
+}
+
+
+/* =========================================
+   FLOOR
+========================================= */
+
+.study-floor {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 32%;
+}
+
+.study-rug {
+    position: absolute;
+
+    left: 50%;
+    top: 35px;
+
+    width: 500px;
+    height: 150px;
+
+    transform:
+        translateX(-50%)
+        perspective(300px)
+        rotateX(40deg);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #a07c5b,
+            #76553b
+        );
+
+    opacity: .7;
+}
+
+
+/* =========================================
+   HINT
+========================================= */
+
+.study-hint {
+    position: absolute;
+
+    right: 25px;
+    bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.7);
+
+    backdrop-filter: blur(8px);
+
+    color: #71583e;
+
+    font-size: 9px;
+
+    z-index: 50;
+}
+
+
+/* =========================================
+   MINI CARDS
+========================================= */
+
+.education-mini-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.education-mini-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 17px;
+
+    border: 1px solid rgba(100,75,50,.12);
+
+    border-radius: 14px;
+
+    background: #faf7f1;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.education-mini-card:hover {
+    box-shadow:
+        0 15px 30px rgba(50,35,20,.1);
+}
+
+.mini-number {
+    font-size: 11px;
+
+    color: #ad8a63;
+
+    font-weight: 700;
+}
+
+.mini-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #29353c;
+
+    color: #d5b372;
+}
+
+.mini-info {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.mini-info span {
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    color: #a07d59;
+}
+
+.mini-info strong {
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    color: #3c3731;
+}
+
+.mini-info small {
+    margin-top: 4px;
+
+    color: #807970;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.mini-arrow {
+    margin-left: auto;
+
+    color: #96724f;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.education-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20,25,28,.55);
+
+    backdrop-filter: blur(9px);
+}
+
+.education-modal {
+    position: relative;
+
+    width: min(520px, 100%);
+
+    padding: 38px;
+
+    border-radius: 22px;
+
+    background: #f8f4ed;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
+}
+
+.education-modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #ebe4d9;
+
+    color: #5c5145;
+
+    cursor: pointer;
+}
+
+.education-modal-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #29353c;
+
+    color: #d6b472;
+}
+
+.education-modal-type {
+    display: block;
+
+    margin-top: 18px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #a07b54;
+}
+
+.education-modal h2 {
+    margin: 8px 0 4px;
+
+    color: #342f29;
+}
+
+.education-modal h3 {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #776d63;
+}
+
+.education-modal-year {
+    width: fit-content;
+
+    margin: 15px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #eae0d1;
+
+    color: #715438;
+
+    font-size: 10px;
+}
+
+.education-modal p {
+    line-height: 1.7;
+
+    color: #6f675f;
+}
+
+.education-modal-tags {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin: 20px 0;
+}
+
+.education-modal-tags span {
+    padding: 7px 10px;
+
+    border-radius: 20px;
+
+    background: #e8dfd3;
+
+    color: #71563d;
+
+    font-size: 9px;
+}
+
+.education-modal-button {
+    padding: 11px 18px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #29353c;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .education-mini-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .study-scene {
+        min-height: 700px;
+    }
+
+    .degree-frame {
+        transform: scale(.75);
+        transform-origin: top left;
+    }
+
+    .study-bookshelf {
+        transform: scale(.75);
+        transform-origin: top right;
+    }
+
+    .academic-timeline {
+        width: 80%;
+    }
+
+    .study-desk {
+        transform:
+            translateX(-50%)
+            scale(.8);
+        transform-origin: bottom center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .study-scene {
+        min-height: 700px;
+    }
+
+    .degree-frame {
+        left: 2%;
+        transform: scale(.55);
+    }
+
+    .study-bookshelf {
+        right: 2%;
+        transform: scale(.55);
+    }
+
+    .study-lamp {
+        display: none;
+    }
+
+    .study-desk {
+        transform:
+            translateX(-50%)
+            scale(.65);
+    }
+
+    .academic-timeline {
+        width: 95%;
+        bottom: 39%;
+    }
+
+    .timeline-node {
+        width: 65px;
+    }
+
+    .study-wall-title {
+        display: none;
+    }
+}
