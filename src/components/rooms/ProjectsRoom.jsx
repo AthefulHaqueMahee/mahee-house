@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
   X,
@@ -17,483 +16,194 @@ function ProjectsRoom() {
     {
       number: "01",
       title: "Food Axis",
-      type: "RESTAURANT MANAGEMENT PLATFORM",
-      status: "IN DEVELOPMENT",
+      category: "SOFTWARE ENGINEERING",
       description:
-        "A restaurant operations platform designed to simplify restaurant management, orders, inventory and day-to-day business operations.",
+        "A restaurant operations platform designed to simplify restaurant management, orders, inventory and daily business operations.",
       technologies: [
         "React",
         "JavaScript",
-        "HTML",
-        "CSS",
-        "SQL",
+        "Node.js",
+        "Database",
       ],
-      progress: 82,
-      github: "#",
-      demo: "#",
-      color: "orange",
+      status: "FEATURED PROJECT",
+
+      // ADD YOUR REAL LINKS HERE
+      github: "https://github.com/AthefulHaqueMahee",
+      live: "",
+
+      // ADD IMAGE PATH HERE LATER
+      image: "",
     },
 
     {
       number: "02",
       title: "Mahee's House",
-      type: "INTERACTIVE PORTFOLIO",
-      status: "ACTIVE",
+      category: "PORTFOLIO",
       description:
-        "An interactive portfolio designed as a virtual house where every room represents a different part of my professional and personal journey.",
+        "An interactive portfolio designed as a virtual house where every room represents a different part of my professional journey.",
       technologies: [
         "React",
+        "Vite",
         "Framer Motion",
-        "JavaScript",
         "CSS",
       ],
-      progress: 95,
-      github: "#",
-      demo: "#",
-      color: "cyan",
+      status: "CURRENT PROJECT",
+
+      github: "https://github.com/AthefulHaqueMahee",
+      live: "",
+
+      image: "",
     },
 
     {
       number: "03",
-      title: "Hotel Management System",
-      type: "JAVA APPLICATION",
-      status: "COMPLETED",
+      title: "Employee Management System",
+      category: "C PROGRAMMING",
       description:
-        "A Java-based hotel management application designed to handle rooms, customers, reservations and hotel operations.",
+        "A file-based employee management application for storing employee information, calculating salaries and managing attendance.",
       technologies: [
-        "Java",
-        "OOP",
+        "C",
         "File Handling",
+        "Data Management",
       ],
-      progress: 100,
-      github: "#",
-      demo: "#",
-      color: "purple",
+      status: "ACADEMIC PROJECT",
+
+      github: "https://github.com/AthefulHaqueMahee",
+      live: "",
+
+      image: "",
     },
 
     {
       number: "04",
-      title: "Employee Management System",
-      type: "C APPLICATION",
-      status: "COMPLETED",
+      title: "Hotel Management System",
+      category: "JAVA PROJECT",
       description:
-        "A file-based employee management application supporting employee records, attendance and salary-related operations.",
+        "A Java-based management system designed to organize hotel rooms, customers, bookings and related operations.",
       technologies: [
-        "C",
-        "File Handling",
-        "Data Structures",
+        "Java",
+        "OOP",
+        "Database",
       ],
-      progress: 100,
-      github: "#",
-      demo: "#",
-      color: "green",
+      status: "ACADEMIC PROJECT",
+
+      github: "https://github.com/AthefulHaqueMahee",
+      live: "",
+
+      image: "",
     },
   ];
 
   return (
     <section className="projects-room">
 
-      {/* =====================================
+      {/* ================================
           HEADER
-      ===================================== */}
+      ================================= */}
 
-      <motion.div
-        className="projects-header"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
+      <div className="projects-header">
 
-        <p className="room-kicker">
-          THE PROJECT LAB
-        </p>
+        <div>
 
-        <h1>
-          Things I've Built.
-        </h1>
+          <p className="room-kicker">
+            THE WORKSHOP
+          </p>
 
-        <p>
-          A collection of experiments, academic projects
-          and software ideas brought to life through code.
-        </p>
+          <h1>
+            Projects
+            <span className="projects-dot">.</span>
+          </h1>
 
-      </motion.div>
-
-
-      {/* =====================================
-          PROJECT LAB
-      ===================================== */}
-
-      <div className="project-lab">
-
-        <div className="lab-glow glow-one" />
-        <div className="lab-glow glow-two" />
-
-        {/* LAB HEADER */}
-
-        <div className="lab-header">
-
-          <div className="lab-title">
-
-            <div className="lab-icon">
-              <FolderGit2 size={20} />
-            </div>
-
-            <div>
-              <span>
-                PROJECT DATABASE
-              </span>
-
-              <h2>
-                MAHEE'S PROJECT LAB
-              </h2>
-            </div>
-
-          </div>
-
-
-          <div className="lab-status">
-
-            <span className="live-dot" />
-
-            SYSTEM ONLINE
-
-          </div>
+          <p className="projects-intro">
+            A collection of things I've built,
+            designed and experimented with
+            throughout my journey.
+          </p>
 
         </div>
 
-
-        {/* =================================
-            PROJECT CARDS
-        ================================= */}
-
-        <div className="projects-grid">
-
-          {projects.map((project, index) => (
-
-            <motion.button
-              key={project.number}
-              className={`project-card ${project.color}`}
-              onClick={() =>
-                setSelectedProject(project)
-              }
-
-              initial={{
-                opacity: 0,
-                y: 25,
-              }}
-
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-
-              transition={{
-                delay: index * 0.1,
-              }}
-
-              whileHover={{
-                y: -8,
-                scale: 1.015,
-              }}
-            >
-
-              {/* CARD TOP */}
-
-              <div className="project-card-top">
-
-                <span className="project-number">
-                  {project.number}
-                </span>
-
-                <span className="project-status">
-                  {project.status}
-                </span>
-
-              </div>
-
-
-              {/* PROJECT ICON */}
-
-              <div className="project-visual">
-
-                <motion.div
-                  className="project-code-icon"
-                  animate={{
-                    rotate: [0, 3, -3, 0],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                  }}
-                >
-                  <Code2 size={30} />
-                </motion.div>
-
-                <div className="project-lines">
-
-                  <span />
-                  <span />
-                  <span />
-
-                </div>
-
-              </div>
-
-
-              {/* INFORMATION */}
-
-              <div className="project-information">
-
-                <span className="project-type">
-                  {project.type}
-                </span>
-
-                <h3>
-                  {project.title}
-                </h3>
-
-                <p>
-                  {project.description}
-                </p>
-
-              </div>
-
-
-              {/* TECHNOLOGIES */}
-
-              <div className="project-technologies">
-
-                {project.technologies
-                  .slice(0, 3)
-                  .map((technology) => (
-
-                    <span key={technology}>
-                      {technology}
-                    </span>
-
-                  ))}
-
-                {project.technologies.length > 3 && (
-                  <span>
-                    +{project.technologies.length - 3}
-                  </span>
-                )}
-
-              </div>
-
-
-              {/* PROGRESS */}
-
-              <div className="project-progress">
-
-                <div className="progress-label">
-
-                  <span>
-                    DEVELOPMENT
-                  </span>
-
-                  <strong>
-                    {project.progress}%
-                  </strong>
-
-                </div>
-
-                <div className="progress-track">
-
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{
-                      width: `${project.progress}%`,
-                    }}
-                    transition={{
-                      duration: 1.2,
-                      delay: 0.4,
-                    }}
-                  />
-
-                </div>
-
-              </div>
-
-
-              <div className="project-explore">
-                EXPLORE PROJECT →
-              </div>
-
-            </motion.button>
-
-          ))}
-
-        </div>
-
-
-        {/* =================================
-            LAB FOOTER
-        ================================= */}
-
-        <div className="lab-footer">
-
-          <Sparkles size={15} />
+        <div className="projects-counter">
 
           <span>
-            SELECT A PROJECT TO ENTER THE LAB
+            PROJECTS
           </span>
 
-          <Rocket size={15} />
+          <strong>
+            {String(projects.length).padStart(2, "0")}
+          </strong>
 
         </div>
 
       </div>
 
 
-      {/* =====================================
-          PROJECT MODAL
-      ===================================== */}
+      {/* ================================
+          FEATURED PROJECTS
+      ================================= */}
 
-      <AnimatePresence>
+      <div className="featured-projects">
 
-        {selectedProject && (
+        {projects
+          .filter((project) => project.number <= "02")
+          .map((project) => (
 
-          <motion.div
-            className="project-modal-overlay"
-
-            initial={{ opacity: 0 }}
-
-            animate={{ opacity: 1 }}
-
-            exit={{ opacity: 0 }}
-
-            onClick={() =>
-              setSelectedProject(null)
-            }
-          >
-
-            <motion.div
-              className={`project-modal ${selectedProject.color}`}
-
-              initial={{
-                opacity: 0,
-                scale: 0.85,
-                y: 30,
-              }}
-
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: 0,
-              }}
-
-              exit={{
-                opacity: 0,
-                scale: 0.85,
-                y: 30,
-              }}
-
-              onClick={(e) =>
-                e.stopPropagation()
+            <div
+              className="featured-project"
+              key={project.number}
+              onClick={() =>
+                setSelectedProject(project)
               }
             >
 
-              {/* CLOSE */}
-
-              <button
-                className="project-modal-close"
-                onClick={() =>
-                  setSelectedProject(null)
-                }
-              >
-                <X size={19} />
-              </button>
-
-
-              {/* NUMBER */}
-
-              <span className="modal-project-number">
-                PROJECT {selectedProject.number}
-              </span>
-
-
-              <div className="modal-project-icon">
-                <Code2 size={32} />
+              <div className="project-number">
+                {project.number}
               </div>
 
 
-              <span className="modal-project-type">
-                {selectedProject.type}
-              </span>
+              <div className="featured-content">
+
+                <div className="project-meta">
+
+                  <span>
+                    {project.category}
+                  </span>
+
+                  <span>
+                    {project.status}
+                  </span>
+
+                </div>
 
 
-              <h2>
-                {selectedProject.title}
-              </h2>
+                <h2>
+                  {project.title}
+                </h2>
 
 
-              <div className="modal-status">
-
-                <span className="live-dot" />
-
-                {selectedProject.status}
-
-              </div>
+                <p>
+                  {project.description}
+                </p>
 
 
-              <p className="modal-description">
-                {selectedProject.description}
-              </p>
+                <div className="technology-row">
 
-
-              {/* TECHNOLOGIES */}
-
-              <div className="modal-section">
-
-                <span className="modal-section-title">
-                  TECHNOLOGIES
-                </span>
-
-                <div className="modal-technologies">
-
-                  {selectedProject.technologies.map(
-                    (technology) => (
-
-                      <span key={technology}>
-                        {technology}
+                  {project.technologies.map(
+                    (tech) => (
+                      <span key={tech}>
+                        {tech}
                       </span>
-
                     )
                   )}
 
                 </div>
 
-              </div>
 
+                <div className="project-open">
 
-              {/* PROGRESS */}
+                  EXPLORE PROJECT
 
-              <div className="modal-section">
-
-                <div className="modal-progress-header">
-
-                  <span>
-                    DEVELOPMENT PROGRESS
-                  </span>
-
-                  <strong>
-                    {selectedProject.progress}%
-                  </strong>
-
-                </div>
-
-                <div className="modal-progress">
-
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{
-                      width:
-                        `${selectedProject.progress}%`,
-                    }}
-                    transition={{
-                      duration: 1,
-                    }}
+                  <ExternalLink
+                    size={16}
                   />
 
                 </div>
@@ -501,61 +211,294 @@ function ProjectsRoom() {
               </div>
 
 
-              {/* BUTTONS */}
+              {/* PROJECT PREVIEW */}
 
-              <div className="project-modal-buttons">
+              <div className="project-visual">
+
+                {project.image ? (
+
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                  />
+
+                ) : (
+
+                  <div className="visual-window">
+
+                    <div className="visual-top">
+
+                      <span />
+                      <span />
+                      <span />
+
+                    </div>
+
+                    <div className="visual-content">
+
+                      <Code2 size={45} />
+
+                      <span>
+                        {project.number}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                )}
+
+              </div>
+
+            </div>
+
+          ))}
+
+      </div>
+
+
+      {/* ================================
+          OTHER PROJECTS
+      ================================= */}
+
+      <div className="other-projects">
+
+        <div className="other-title">
+
+          <div>
+
+            <span>
+              MORE WORK
+            </span>
+
+            <h2>
+              Things I've built.
+            </h2>
+
+          </div>
+
+          <Sparkles size={22} />
+
+        </div>
+
+
+        <div className="project-grid">
+
+          {projects
+            .filter(
+              (project) =>
+                project.number > "02"
+            )
+            .map((project) => (
+
+              <div
+                className="project-card"
+                key={project.number}
+                onClick={() =>
+                  setSelectedProject(project)
+                }
+              >
+
+                <div className="card-top">
+
+                  <span className="small-number">
+                    {project.number}
+                  </span>
+
+                  <Rocket size={18} />
+
+                </div>
+
+
+                <span className="card-category">
+                  {project.category}
+                </span>
+
+
+                <h3>
+                  {project.title}
+                </h3>
+
+
+                <p>
+                  {project.description}
+                </p>
+
+
+                <div className="card-bottom">
+
+                  <div className="mini-tags">
+
+                    {project.technologies
+                      .slice(0, 3)
+                      .map((tech) => (
+                        <span key={tech}>
+                          {tech}
+                        </span>
+                      ))}
+
+                  </div>
+
+                  <span className="card-arrow">
+                    →
+                  </span>
+
+                </div>
+
+              </div>
+
+            ))}
+
+        </div>
+
+      </div>
+
+
+      {/* ================================
+          FOOTER
+      ================================= */}
+
+      <div className="projects-footer">
+
+        <FolderGit2 size={20} />
+
+        <span>
+          Always building. Always learning.
+        </span>
+
+      </div>
+
+
+      {/* ================================
+          PROJECT MODAL
+      ================================= */}
+
+      {selectedProject && (
+
+        <div
+          className="project-modal-overlay"
+          onClick={() =>
+            setSelectedProject(null)
+          }
+        >
+
+          <div
+            className="project-modal"
+            onClick={(e) =>
+              e.stopPropagation()
+            }
+          >
+
+            <button
+              className="modal-close"
+              onClick={() =>
+                setSelectedProject(null)
+              }
+            >
+
+              <X size={20} />
+
+            </button>
+
+
+            <span className="modal-number">
+              PROJECT {selectedProject.number}
+            </span>
+
+
+            <span className="modal-category">
+              {selectedProject.category}
+            </span>
+
+
+            <h2>
+              {selectedProject.title}
+            </h2>
+
+
+            <p>
+              {selectedProject.description}
+            </p>
+
+
+            {/* TECHNOLOGIES */}
+
+            <div className="modal-tech">
+
+              {selectedProject.technologies.map(
+                (tech) => (
+                  <span key={tech}>
+                    {tech}
+                  </span>
+                )
+              )}
+
+            </div>
+
+
+            {/* LINKS */}
+
+            <div className="modal-actions">
+
+              {selectedProject.github && (
 
                 <a
                   href={selectedProject.github}
                   target="_blank"
                   rel="noreferrer"
-                  onClick={(e) => {
-                    if (
-                      selectedProject.github === "#"
-                    ) {
-                      e.preventDefault();
-                    }
-                  }}
+                  className="modal-primary"
+                  onClick={(e) =>
+                    e.stopPropagation()
+                  }
                 >
+
                   <Code2 size={17} />
-GitHub
+
+                  GitHub
+
                 </a>
+
+              )}
+
+
+              {selectedProject.live && (
 
                 <a
-                  href={selectedProject.demo}
+                  href={selectedProject.live}
                   target="_blank"
                   rel="noreferrer"
-                  onClick={(e) => {
-                    if (
-                      selectedProject.demo === "#"
-                    ) {
-                      e.preventDefault();
-                    }
-                  }}
+                  className="modal-primary"
+                  onClick={(e) =>
+                    e.stopPropagation()
+                  }
                 >
+
                   <ExternalLink size={17} />
+
                   Live Demo
+
                 </a>
 
-              </div>
+              )}
 
 
               <button
-                className="return-project-button"
+                className="modal-secondary"
                 onClick={() =>
                   setSelectedProject(null)
                 }
               >
-                ← RETURN TO PROJECT LAB
+                Close
               </button>
 
-            </motion.div>
+            </div>
 
-          </motion.div>
+          </div>
 
-        )}
+        </div>
 
-      </AnimatePresence>
+      )}
 
     </section>
   );
