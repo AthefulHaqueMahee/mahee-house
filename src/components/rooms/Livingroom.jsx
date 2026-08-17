@@ -210,10 +210,10 @@ function LivingRoom() {
             <div className="profile-ring">
 
               <img
-                src="/mahee.png"
-                alt="MD Atheful Haque Mahee"
-                className="profile-photo"
-              />
+  className="about-profile-image"
+  src={`${import.meta.env.BASE_URL}mahee.png`}
+  alt="MD Atheful Haque Mahee"
+/>
 
             </div>
 
